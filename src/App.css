@@ -8,11 +8,12 @@
     /* cores hsl ( matriz,  saturação e luminosidade) */
     --matriz: 0;
     --saturacao: 0%;
+    --cor-suave:  hsl(var(--matriz), var(--saturacao), 85%);
     --cor-titulo: hsl(var(--matriz), var(--saturacao), 25%);
     --cor-titulo-dark: hsl(var(--matriz), var(--saturacao), 0%);
     --cor-texto: hsl(var(--matriz), var(--saturacao), 46%);
-    --body-color: hsl(var(--matriz), var(--saturacao), 96%);
-    --container-color: #efefef;
+    --body-color: hsl(var(--matriz), var(--saturacao), 99%);
+    --container-color: hsl(var(--matriz), var(--saturacao), 97%);
 
     --body-font: 'Inria Sans', sans-serif;
 

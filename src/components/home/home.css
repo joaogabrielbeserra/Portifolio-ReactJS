@@ -128,6 +128,20 @@
     text-align: center;
 }
 
+
+.home__scroll:hover{
+  color: var(--cor-titulo-dark);
+}
+
+.home__scroll-mouse {
+    transition: transform 0.3s ease;
+}
+
+.home__scroll:hover .home__scroll-mouse {
+    transform: translateY(0.25rem);
+    color: var(--cor-titulo-dark);
+}
+
 .wheel {
     animation: scroll 3s ease infinite;
 }

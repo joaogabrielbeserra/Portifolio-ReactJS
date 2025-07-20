@@ -5,7 +5,7 @@
     left: 0;
     z-index: var(--z-fixo);
     background-color: var(--body-color);
-    border-bottom: 0.5px solid var(--cor-titulo);
+    border-bottom: 0.5px solid var(--cor-suave);
 
 }
 

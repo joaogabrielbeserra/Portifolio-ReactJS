@@ -1,5 +1,6 @@
 import React from "react";
 import { FaDocker, FaGitAlt, FaGithub } from "react-icons/fa";
+import { IoLogoVercel } from "react-icons/io5";
 
 
 const Devops = () => {
@@ -41,6 +42,17 @@ const Devops = () => {
                             </h3>
                             <span className="skills__level">
                                 Já subi dois containers, sei o básico para poder usar.
+                            </span>
+                        </div>
+                    </div>
+                    <div className="skills__data">
+
+                        <div className="">
+                            <h3 className="skills__name">
+                                <IoLogoVercel className="skills__icon" />    Vercel - &nbsp; <h3 className="skills__subtitle">Básico</h3>
+                            </h3>
+                            <span className="skills__level">
+                                Utilizo para subir meus projetos.
                             </span>
                         </div>
                     </div>
