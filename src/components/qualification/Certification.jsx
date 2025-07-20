@@ -100,7 +100,7 @@ const Certification = () => {
     };
 
     return (
-        <div className="certification__carousel">
+        <div className="">
             <h3 className="certification__title">
                 <FaCertificate className="certification__icon" />
                 Certificações

@@ -140,7 +140,7 @@ const Qualification = () => {
                     </div>
                 </div>
 
-                <div className="certification__carousel">
+                <div className="certification__carousel ">
                     <Certification />
                 </div>
             </div>
