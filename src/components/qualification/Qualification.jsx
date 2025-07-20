@@ -3,6 +3,8 @@ import './qualification.css';
 import { FaGraduationCap } from "react-icons/fa";
 import { GiGymBag } from "react-icons/gi";
 import { LuCalendarArrowUp } from "react-icons/lu";
+import Certification from "./Certification";
+
 
 const Qualification = () => {
     const [ToggleState, setToggleState] = useState(2);
@@ -136,6 +138,10 @@ const Qualification = () => {
                      
 
                     </div>
+                </div>
+
+                <div className="certification__carousel">
+                    <Certification />
                 </div>
             </div>
         </section>

@@ -30,7 +30,7 @@ const Backend = () => {
                                 <FaPython className="skills__icon" />    Python - &nbsp; <h3 className="skills__subtitle">Intermediário</h3>
                             </h3>
                             <span className="skills__level">
-                                Estou aprendendo, foco na automatização de processos.
+                                Foco na automatização de processos.
                             </span>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ const Backend = () => {
                                 <FaJava className="skills__icon" />    Java - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
                             </h3>
                             <span className="skills__level">
-                                Básico, planejo me aprofundar tornar-lá minha principal.
+                                Básico, planejo me aprofundar torna-lá minha principal.
                             </span>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ const Backend = () => {
                                 <FaPhp className="skills__icon" />    PHP - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
                             </h3>
                             <span className="skills__level">
-                                Já mexi em projetos Wordpress.
+                                Desenvolvimento de plugins em Wordpress.
                             </span>
                         </div>
                     </div>

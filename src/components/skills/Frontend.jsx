@@ -31,7 +31,7 @@ const Frontend = () => {
                                 <FaBootstrap className="skills__icon" />    Bootstrap - &nbsp; <h3 className="skills__subtitle">Avançado</h3>
                             </h3>
                             <span className="skills__level">
-                                Engatinhei com Bootstrap, já usei muito.
+                                Engatinhei com Bootstrap, usei e conheço muito.
 
                             </span>
                         </div>
@@ -43,7 +43,7 @@ const Frontend = () => {
                                 <FaWordpress className="skills__icon" /> Wordpress - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
                             </h3>
                             <span className="skills__level">
-                                Já trabalhei com dois projetos, sei a base.
+                                Já trabalhei com alguns projetos.
                             </span>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ const About = () => {
                 <div className="about__data">
                     <Info />
                     <p className="about__description">
-                        Desenvolvedor de software e formando no IFSP, crio soluções digitais que vão do web ao mobile, sempre misturando prática e inovação – já atuei com automação, integração de sistemas, projetos para setor público e privado, e sigo estudando tecnologias no back e front para transformar minha vida e me tornar cada dia um dev melhor.
+                        Desenvolvedor de software e formando no IFSP, crio soluções digitais que vão do web ao mobile, sempre misturando prática e inovação – já atuei com automação, integração de sistemas, projetos para o setor público e privado, e sigo estudando tecnologias no back e front para transformar os processos, resultados e a realidade da empresa onde atuo.
                     </p>
                     <a download="" href={CV} className="button button--flex about__cv">Baixar CV
                         <svg
