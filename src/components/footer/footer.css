@@ -1,6 +1,6 @@
 .footer {
     background-color: var(--body-color);
-    
+    padding-bottom: var(--mb-3);
     border-top: 0.5px solid var(--cor-suave);
 }
 
@@ -77,7 +77,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    
+    .footer {
+
+    padding-bottom: var(--mb-3);
+
+}
     
 }
 
