@@ -40,7 +40,7 @@ const Frontend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaWordpress className="skills__icon" /> Wordpress - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
+                                <FaWordpress className="skills__icon" /> Wordpress - &nbsp; <h3 className="skills__subtitle">Básico</h3>
                             </h3>
                             <span className="skills__level">
                                 Já trabalhei com alguns projetos.
