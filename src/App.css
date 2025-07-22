@@ -182,6 +182,24 @@ img {
    
 }
 
+/* Tema Escuro */
+[data-theme="dark"] {
+    --cor-suave: hsl(var(--matriz), var(--saturacao), 25%);
+    --cor-titulo: hsl(var(--matriz), var(--saturacao), 85%);
+    --cor-titulo-dark: hsl(var(--matriz), var(--saturacao), 95%);
+    --cor-texto: hsl(var(--matriz), var(--saturacao), 70%);
+    --body-color: hsl(var(--matriz), var(--saturacao), 8%);
+    --container-color: hsl(var(--matriz), var(--saturacao), 12%);
+
+    
+
+    
+}
+
+[data-theme="dark"] .home .button__icon,
+[data-theme="dark"] .contact .button__icon {
+    color: black !important;
+}
 
 
 /* breakpoints */

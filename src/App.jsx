@@ -9,6 +9,7 @@ import Services from './components/services/Services.jsx'
 import Projects from './components/projects/Project.jsx'
 import Contact from './components/contact/Contact.jsx'
 import Footer from './components/footer/Footer.jsx'
+import ThemeToggle from './components/theme/ThemeToggle.jsx'
 
 function App() {
   return (
@@ -23,9 +24,8 @@ function App() {
         <Projects />
         <Contact />
         <Footer />
-
       </main>
-     
+      <ThemeToggle />
     </>
   )
 }

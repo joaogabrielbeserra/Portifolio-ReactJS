@@ -1,10 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./header.css";
 
 
 const Header = () => {
   // Toggle menu state
   const[Toggle, showMenu] = useState(false);
+
+  // Theme toggle state
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Carrega o tema salvo no localStorage ao montar o componente
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDarkMode(true);
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }, []);
+
+  // Alterna entre os temas
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    
+    if (newTheme) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   return (
     <header className="header">
@@ -55,8 +81,16 @@ const Header = () => {
           <i className="uil uil-times nav__close"onClick={() => showMenu(!Toggle)}></i>
         </div>
 
-        <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
-          <i class="uil uil-apps"></i>
+        <div className="nav__actions">
+          <div className="theme-switch" onClick={toggleTheme}>
+            <div className={`theme-switch-toggle ${isDarkMode ? 'active' : ''}`}>
+              <i className={isDarkMode ? "uil uil-sun" : "uil uil-moon"}></i>
+            </div>
+          </div>
+
+          <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
+            <i class="uil uil-apps"></i>
+          </div>
         </div>
       </nav>
     </header>

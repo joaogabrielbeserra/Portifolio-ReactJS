@@ -50,6 +50,68 @@
     color: var(--cor-titulo-dark);
 }
 
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.theme-switch {
+    width: 50px;
+    height: 26px;
+    background-color: var(--cor-suave);
+    border-radius: 13px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--cor-suave);
+}
+
+.theme-switch:hover {
+    background-color: var(--cor-titulo);
+}
+
+.theme-switch-toggle {
+    width: 22px;
+    height: 22px;
+    background-color: var(--container-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-switch-toggle i {
+    font-size: 12px;
+    color: var(--cor-titulo);
+    transition: color 0.3s ease;
+}
+
+.theme-switch-toggle.active {
+    transform: translateX(24px);
+}
+
+
+[data-theme="dark"] .theme-switch-toggle {
+    background-color: var(--container-color);
+}
+
+[data-theme="dark"] .theme-switch-toggle i {
+    color: var(--title-color);
+}
+
+/* Dark theme header border */
+[data-theme="dark"] .nav {
+    border-top: 1px solid #fff;
+}
+
 /* breakpoints */
 
 @media screen and (max-width: 768px) {
@@ -117,7 +179,57 @@
     .nav__toggle {
         display: block;
     }
+
+    /* Theme switch responsive adjustments */
+    .theme-switch {
+        width: 40px;
+        height: 22px;
+        border-radius: 11px;
+    }
+
+    .theme-switch-toggle {
+        width: 18px;
+        height: 18px;
+        top: 1px;
+        left: 1px;
+    }
+
+    .theme-switch-toggle.active {
+        transform: translateX(19px);
+    }
+
+    .theme-switch-toggle i {
+        font-size: 10px;
+    }
     
+
+    [data-theme="dark"] .header {
+        border-top: 1px solid #fff;
+    }
+    
+    [data-theme="dark"] .nav__menu {
+        border-top: 1px solid #fff;
+    }
+
+    .header {
+        border-top: 1px solid var(--cor-suave);
+    }
+    
+    .nav__menu {
+        border-top: 1px solid var(--cor-suave);
+    }
+    
+}
+
+/* Hide theme switch on desktop - use floating button instead */
+@media screen and (min-width: 769px) {
+    .theme-switch {
+        display: none;
+    }
+    
+    .nav__actions {
+        gap: 0;
+    }
 }
 
 @media screen and  (max-width: 350px) {

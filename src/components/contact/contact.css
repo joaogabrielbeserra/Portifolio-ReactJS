@@ -92,6 +92,10 @@
     
 }
 
+.dark-theme .contact__container svg {
+  color: var(--title-color);
+}
+
 .contact__form-input {
     position: absolute;
     top: 0;
