@@ -203,13 +203,11 @@
     }
     
 
-    [data-theme="dark"] .header {
-        border-top: 1px solid #fff;
-    }
-    
     [data-theme="dark"] .nav__menu {
         border-top: 1px solid #fff;
     }
+    
+   
 
     .header {
         border-top: 1px solid var(--cor-suave);
