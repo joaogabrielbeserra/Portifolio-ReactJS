@@ -276,6 +276,11 @@
     border-color: var(--title-color);
 }
 
+/* Dark theme */
+[data-theme="dark"] .project__box {
+    border: 3px solid var(--cor-suave);
+}
+
 [data-theme="dark"] .project__filter-btn--inactive:hover {
     background-color: var(--title-color);
     color: var(--container-color);
@@ -313,7 +318,7 @@
 
 @media screen and (max-width: 576px) {
     .project__box {
-        height: 200px;
+        height: 250px;
     }
     
     .project__box-overlay {

@@ -100,7 +100,7 @@ const projects = [
         type: "Estudos",
         tech: "Full Stack",
         technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
-        skills: ["MVC", "MySQL", "API", "Bootstrap"],
+        skills: ["MVC", "Bootstrap", "API"],
         description: "",
         backgroundImage: "/src/assets/full-stack-estudo-javascript-mvc2.png",
         videoUrl: "",
@@ -168,7 +168,7 @@ const projects = [
                                 </div>
                                 <div className="project__box-hover-content">
                                     <ul className="project__box-skills">
-                                        {project.skills.slice(0, 4).map((skill, index) => (
+                                        {project.skills.slice(0, 3).map((skill, index) => (
                                             <li key={index}>{skill}</li>
                                         ))}
                                     </ul>
