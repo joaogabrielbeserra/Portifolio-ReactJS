@@ -16,7 +16,7 @@ const Backend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <IoLogoJavascript className="skills__icon" />    JavaScript - &nbsp; <h3 className="skills__subtitle">Experiente</h3>
+                                <IoLogoJavascript className="skills__icon" />    JavaScript - &nbsp; <p className="skills__subtitle">Experiente</p>
                             </h3>
                             <span className="skills__level">
                                 Principal. Tenho experiência com Node.js e Express.
@@ -27,7 +27,7 @@ const Backend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaPython className="skills__icon" />    Python - &nbsp; <h3 className="skills__subtitle">Intermediário</h3>
+                                <FaPython className="skills__icon" />    Python - &nbsp; <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
                                 Foco na automatização de processos.
@@ -38,7 +38,7 @@ const Backend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaJava className="skills__icon" />    Java - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
+                                <FaJava className="skills__icon" />    Java - &nbsp; <p className="skills__subtitle">Fundamental</p>
                             </h3>
                             <span className="skills__level">
                                 Básico, planejo me aprofundar torna-lá minha principal.
@@ -49,7 +49,7 @@ const Backend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaPhp className="skills__icon" />    PHP - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
+                                <FaPhp className="skills__icon" />    PHP - &nbsp; <p className="skills__subtitle">Fundamental</p>
                             </h3>
                             <span className="skills__level">
                                 Desenvolvimento de plugins em Wordpress.

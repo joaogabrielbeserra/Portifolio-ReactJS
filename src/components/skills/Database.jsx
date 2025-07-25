@@ -15,7 +15,7 @@ const Database = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <GrMysql className="skills__icon" />    MySQL - &nbsp; <h3 className="skills__subtitle">Proeficiente</h3>
+                                <GrMysql className="skills__icon" />    MySQL - &nbsp; <p className="skills__subtitle">Proeficiente</p>
                             </h3>
                             
                             <span className="skills__level">
@@ -27,7 +27,7 @@ const Database = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <SiPrisma className="skills__icon" />   Prisma - &nbsp; <h3 className="skills__subtitle">Intermediário</h3>
+                                <SiPrisma className="skills__icon" />   Prisma - &nbsp; <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
                                 ORM que uso com Node.js, tenho experiência com ele.

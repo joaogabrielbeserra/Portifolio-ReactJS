@@ -17,7 +17,7 @@ const Frontend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaReact className="skills__icon" /> ReactJS - &nbsp; <h3 className="skills__subtitle">Proeficiente</h3>
+                                <FaReact className="skills__icon" /> ReactJS - &nbsp; <p className="skills__subtitle">Proeficiente</p>
                             </h3>
                             <span className="skills__level">
                                 Experiência com diversos projetos Web e Native.
@@ -28,7 +28,7 @@ const Frontend = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <FaBootstrap className="skills__icon" />    Bootstrap - &nbsp; <h3 className="skills__subtitle">Avançado</h3>
+                                <FaBootstrap className="skills__icon" />    Bootstrap - &nbsp; <p className="skills__subtitle">Avançado</p>
                             </h3>
                             <span className="skills__level">
                                 Engatinhei com Bootstrap, usei e conheço muito.
@@ -40,7 +40,7 @@ const Frontend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaWordpress className="skills__icon" /> Wordpress - &nbsp; <h3 className="skills__subtitle">Básico</h3>
+                                <FaWordpress className="skills__icon" /> Wordpress - &nbsp; <p className="skills__subtitle">Básico</p>
                             </h3>
                             <span className="skills__level">
                                 Já trabalhei com alguns projetos.
@@ -51,7 +51,7 @@ const Frontend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaSass className="skills__icon" />    Sass - &nbsp; <h3 className="skills__subtitle">Fundamental</h3>
+                                <FaSass className="skills__icon" />    Sass - &nbsp; <p className="skills__subtitle">Fundamental</p>
                             </h3>
                             <span className="skills__level">
                                 Trabalhei em projetos Bootstrap para estilização.
@@ -63,7 +63,7 @@ const Frontend = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaVuejs className="skills__icon" />    Vue.js - &nbsp; <h3 className="skills__subtitle">Básico</h3>
+                                <FaVuejs className="skills__icon" />    Vue.js - &nbsp; <p className="skills__subtitle">Básico</p>
                             </h3>
                             <span className="skills__level">
                                 Estudei já, gostei mas não me aprofundei ao framework.

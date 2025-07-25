@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import { IoLogoVercel } from "react-icons/io5";
+
 import './project.css';
 
 const Project = () => {
@@ -18,6 +20,7 @@ const Project = () => {
             technologies: ["Bootstrap", "JavaScript", "CSS3", "HTML5"],
             skills: ["Design", "Responsividade", "Manipulação de Array"],
             description: "Foi um projeto com viés institucional para impulsionar o conhecimento municípe para os pontos de coleta de Caraguatatuba, foi feito para um amigo apresentar em seu curso técnico em meio ambiente, também foi usado como prova de conhecimento para eliminar a matéria de desenvolvimento web 1.",
+            lista: ["Concepção do Layout, Design e Identidade Visual", "Biblioetca Bootstrap, SCSS e Responsividade", "Javascript e Manipulação de arrays"],
             backgroundImage: "/assets/frontend-estudo-javascript.png",
             videoUrl: "https://youtu.be/euDs0fC0pe8?si=dCXZHlp_CUHi9F5C",
             liveLink: "https://portal-coscientizacao-reciclagem-bo.vercel.app/",
@@ -32,6 +35,7 @@ const Project = () => {
             technologies: ["React", "CSS3", "JavaScript", "Vite"],
             skills: ["Componentes", "Hooks", "Responsividade"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/frontend-aplicado-react.png",
             videoUrl: "",
             liveLink: "",
@@ -46,6 +50,7 @@ const Project = () => {
             technologies: ["Bootstrap", "Responsividade", "Design"],
             skills: ["Bootstrap", "Responsividade", "Design"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/frontend-estudo-bootstrap.png",
             videoUrl: "",
             liveLink: "",
@@ -60,6 +65,7 @@ const Project = () => {
             technologies: ["Java", "Spring Boot", "MySQL", "API"],
             skills: ["Java", "CRUD", "POO"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/backend-estudo-java.jpg",
             videoUrl: "",
             liveLink: "",
@@ -74,6 +80,7 @@ const Project = () => {
             technologies: ["JavaScript", "MVC", "API", "Bootstrap"],
             skills: ["MVC", "API", "JWT"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/full-stack-estudo-javascript-mvc.png",
             videoUrl: "",
             liveLink: "",
@@ -88,6 +95,7 @@ const Project = () => {
             technologies: ["Vue.js", "JavaScript", "CSS3", "API"],
             skills: ["Reatividade", "Data-Binding", "Computed"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/frontend-estudo-vue.png",
             videoUrl: "",
             liveLink: "",
@@ -102,6 +110,7 @@ const Project = () => {
             technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
             skills: ["MVC", "Bootstrap", "API"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/full-stack-estudo-javascript-mvc2.png",
             videoUrl: "",
             liveLink: "",
@@ -116,6 +125,7 @@ const Project = () => {
             technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
             skills: ["Python", "RPA", "Tkinter"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/backend-aplicado-barcode.png",
             videoUrl: "",
             liveLink: "",
@@ -130,6 +140,7 @@ const Project = () => {
             technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
             skills: ["Python", "Excel", "RPA"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/backend-aplicado-pdf-to-excel.png",
             videoUrl: "",
             liveLink: "",
@@ -144,13 +155,13 @@ const Project = () => {
             technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
             skills: ["Javascript", "Manipulação de DOM", "RPA"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/backend-aplicado-glpi-card.png",
             videoUrl: "",
             liveLink: "",
             linkedinPost: "",
             impact: ""
         },
-        ,
         {
             id: 11,
             title: "Avaliador de Hackathon",
@@ -159,15 +170,14 @@ const Project = () => {
             technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
             skills: ["PHP", "Wordpress", "Plugin próprio"],
             description: "",
+            lista: [],
             backgroundImage: "/assets/full-stack-aplicado-hack.png",
             videoUrl: "",
             liveLink: "",
             linkedinPost: "",
             impact: ""
         }
-
     ];
-
     // Filtrar projetos
     const filteredProjects = projects.filter(project => {
         const typeMatch = activeTypeFilter === 'Todos' || project.type === activeTypeFilter;
@@ -225,7 +235,7 @@ const Project = () => {
                                     <span className="project__tag project__tag--tech">{project.tech}</span>
                                 </div>
                                 <div className="project__box-hover-content">
-                                    <ul className="project__box-skills">
+                                    <ul className="project__box-topics">
                                         {project.skills.slice(0, 3).map((skill, index) => (
                                             <li key={index}>{skill}</li>
                                         ))}
@@ -250,14 +260,15 @@ const Project = () => {
                                 {/* Vídeo - só carrega quando o modal abrir */}
                                 {selectedProject.videoUrl && (
                                     <div className="project__video-container">
-                                       
+
                                         <iframe className="project__video"
                                             src="https://www.youtube.com/embed/euDs0fC0pe8?si=ZuvIEWtHi7QmMtvz"
                                             title="YouTube video player"
-                                            frameborder="0"
+                                            frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin"
-                                            allowfullscreen>
+                                            referrerPolicy="strict-origin-when-cross-origin"
+                                            
+                                            allowFullScreen>
 
                                         </iframe>
                                     </div>
@@ -265,23 +276,33 @@ const Project = () => {
                                 )}
 
                                 <div className="project__modal-links">
+                                    <div className="project__modal-center">
+                                        {selectedProject.liveLink && (
+                                            <a
+                                                href={selectedProject.liveLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="project__modal-link project__modal-link--live"
+                                            >
+                                                <FaGithub className="project__link-icon" />
+                                                Ver Projeto ao vivo
+                                                <IoLogoVercel className="project__link-icon" /> 
+                                            </a>
+                                        )}
+                                    </div>
 
-
-                                    {selectedProject.liveLink && (
-                                        <a
-                                            href={selectedProject.liveLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="project__modal-link project__modal-link--live"
-                                        >
-                                            <FaGithub className="project__link-icon" />
-                                            Ver Projeto ao vivo
-
-                                        </a>
-                                    )}
+                                    <ul className="project__box-skills" title="Frases Chaves:">
+                                        {selectedProject.lista?.map((item, index) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
                                 </div>
 
-                                <p className="project__modal-description">{selectedProject.description}</p>
+
+
+
+
+                                <p className="project__modal-description"><strong>Descrição: </strong>{selectedProject.description}</p>
 
 
 

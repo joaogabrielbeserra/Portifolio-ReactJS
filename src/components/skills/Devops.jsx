@@ -16,7 +16,7 @@ const Devops = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaGitAlt className="skills__icon" />    Git - &nbsp; <h3 className="skills__subtitle">Intermediário</h3>
+                                <FaGitAlt className="skills__icon" />    Git - &nbsp; <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
                                 Versionamento é essencial, manjo o suficiente.
@@ -27,7 +27,7 @@ const Devops = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaGithub className="skills__icon" />    GitHub - &nbsp; <h3 className="skills__subtitle">Intermediário</h3>
+                                <FaGithub className="skills__icon" />    GitHub - &nbsp; <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
                                 Já trabalhei sozinho e em equipe, sei como me portar.
@@ -38,7 +38,7 @@ const Devops = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <FaDocker className="skills__icon" />    Docker - &nbsp; <h3 className="skills__subtitle">Básico</h3>
+                                <FaDocker className="skills__icon" />    Docker - &nbsp; <p className="skills__subtitle">Básico</p>
                             </h3>
                             <span className="skills__level">
                                 Já subi dois containers, sei o básico para poder usar.
@@ -49,7 +49,7 @@ const Devops = () => {
 
                         <div className="">
                             <h3 className="skills__name">
-                                <IoLogoVercel className="skills__icon" />    Vercel - &nbsp; <h3 className="skills__subtitle">Básico</h3>
+                                <IoLogoVercel className="skills__icon" />    Vercel - &nbsp; <p className="skills__subtitle">Básico</p>
                             </h3>
                             <span className="skills__level">
                                 Utilizo para subir meus projetos.

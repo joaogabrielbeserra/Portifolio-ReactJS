@@ -25,7 +25,7 @@ const Contact = () => {
 
                         </div>
                         <div className="contact__card">
-                            <i class="uil uil-whatsapp contact__icon-title"></i>
+                            <i className="uil uil-whatsapp contact__icon-title"></i>
                             <h3 className="contact__card-title">WhatsApp</h3>
                             <span className="contact__card-data">+55 (12) 99721 - 5547</span>
                             <a href="https://wa.me/5512997215547?text=Ol%C3%A1%20Jo%C3%A3o%2C%0A%0AGostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20seguinte%20servi%C3%A7o..." target="_blank" className="contact__button">Iniciar uma conversa!{""}
@@ -34,7 +34,7 @@ const Contact = () => {
 
                         </div>
                         <div className="contact__card">
-                            <i class="uil uil-linkedin contact__icon-title"></i>
+                            <i className="uil uil-linkedin contact__icon-title"></i>
                             <h3 className="contact__card-title">Linkedin </h3>
 
                             <span className="contact__card-data">João Gabriel de Faria Beserra</span>
@@ -51,18 +51,18 @@ const Contact = () => {
                     </h3>
                     <form action="" className="contact__form">
                         <div className="contact__form-div">
-                            <label className="contact__form-tag">Nome</label>
-                            <input type="text" name="name" className="contact__form-input" placeholder="Insira seu nome" />
+                            <label className="contact__form-tag" htmlFor="name">Nome</label>
+                            <input type="text" name="name" id="name" className="contact__form-input" autoComplete="name" placeholder="Insira seu nome" />
 
                         </div>
                         <div className="contact__form-div">
-                            <label className="contact__form-tag">E-mail</label>
-                            <input type="text" name="name" className="contact__form-input" placeholder="Insira seu e-mail" />
+                            <label className="contact__form-tag" htmlFor="email">E-mail</label>
+                            <input type="email" name="email" id="email" className="contact__form-input" autoComplete="email" placeholder="Insira seu e-mail" />
 
                         </div>
                         <div className="contact__form-div contact__form-area">
-                            <label className="contact__form-tag">Mensagem</label>
-                            <textarea type="text" name="descricao" cols={30} rows={10} id="" className="contact__form-input " placeholder="Descreva seu projeto" />
+                            <label className="contact__form-tag" htmlFor="descricao">Mensagem</label>
+                            <textarea type="text" id="descricao" name="descricao" cols={30} rows={10} className="contact__form-input " placeholder="Descreva seu projeto" />
 
                         </div>
                         <button href="#contato" className="button button--flex" style={{ fontWeight: "var(--font-semi-bold)" }}>
