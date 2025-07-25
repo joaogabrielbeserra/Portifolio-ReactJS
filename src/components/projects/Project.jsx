@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaGithub } from "react-icons/fa";  
+import { FaGithub } from "react-icons/fa";
 import './project.css';
 
 const Project = () => {
@@ -9,106 +9,164 @@ const Project = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     // Dados dos projetos
-const projects = [
-    {
-        id: 1,
-        title: "OnePage Bootstrap",
-        type: "Aplicados",
-        tech: "Frontend",
-        technologies: ["Bootstrap", "JavaScript", "CSS3", "HTML5"],
-        skills: ["Design", "Responsividade", "Manipulação de Array"],
-        description: "",
-        backgroundImage: "/assets/frontend-estudo-javascript.png",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    },
-    {
-        id: 2,
-        title: "Portfolio React",
-        type: "Aplicados",
-        tech: "Frontend",
-        technologies: ["React", "CSS3", "JavaScript", "Vite"],
-        skills: ["Componentes", "Hooks", "Responsividade"],
-        description: "",
-        backgroundImage: "/assets/frontend-aplicado-react.png",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    },
-    {
-        id: 3,
-        title: "OnePage Bootstrap",
-        type: "Estudos",
-        tech: "Frontend",
-        technologies: ["Bootstrap", "Responsividade", "Design"],
-        skills: ["Bootstrap", "Responsividade", "Design"],
-        description: "",
-        backgroundImage: "/assets/frontend-estudo-bootstrap.png",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    },
-    {
-        id: 4,
-        title: "Desafio DevJava Itaú",
-        type: "Estudos",
-        tech: "Backend",
-        technologies: ["Java", "Spring Boot", "MySQL", "API"],
-        skills: ["Java", "CRUD", "POO"],
-        description: "",
-        backgroundImage: "/assets/backend-estudo-java.jpg",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    },
-    {
-        id: 5,
-        title: "MVC Relógio Ponto",
-        type: "Estudos",
-        tech: "Full Stack",
-        technologies: ["JavaScript", "MVC", "API", "Bootstrap"],
-        skills: ["MVC", "API", "JWT"],
-        description: "",
-        backgroundImage: "/assets/full-stack-estudo-javascript-mvc.png",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    },
-    {
-        id: 6,
-        title: "Monta Lanche VueJS",
-        type: "Estudos",
-        tech: "Frontend",
-        technologies: ["Vue.js", "JavaScript", "CSS3", "API"],
-        skills: ["Reatividade", "Data-Binding", "Computed"],
-        description: "",
-        backgroundImage: "/assets/frontend-estudo-vue.png",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    },
-    {
-        id: 7,
-        title: "MVC STUP",
-        type: "Estudos",
-        tech: "Full Stack",
-        technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
-        skills: ["MVC", "Bootstrap", "API"],
-        description: "",
-        backgroundImage: "/assets/full-stack-estudo-javascript-mvc2.png",
-        videoUrl: "",
-        liveLink: "",
-        linkedinPost: "",
-        impact: ""
-    }
-];
+    const projects = [
+        {
+            id: 1,
+            title: "OnePage Bootstrap",
+            type: "Aplicados",
+            tech: "Frontend",
+            technologies: ["Bootstrap", "JavaScript", "CSS3", "HTML5"],
+            skills: ["Design", "Responsividade", "Manipulação de Array"],
+            description: "Foi um projeto com viés institucional para impulsionar o conhecimento municípe para os pontos de coleta de Caraguatatuba, foi feito para um amigo apresentar em seu curso técnico em meio ambiente, também foi usado como prova de conhecimento para eliminar a matéria de desenvolvimento web 1.",
+            backgroundImage: "/assets/frontend-estudo-javascript.png",
+            videoUrl: "https://youtu.be/euDs0fC0pe8?si=dCXZHlp_CUHi9F5C",
+            liveLink: "https://portal-coscientizacao-reciclagem-bo.vercel.app/",
+            linkedinPost: "",
+            impact: 'Foi mais uma vez, interessante e gostoso mexer com o Bootstrap, rever a lib e estudar a manipulação de arrays em javascript, fiz isso com um crud local dentro da página "Ações" , existem cards de iniciativas de reciclagem sustentável, como nome e descrição, com funcionalidades com cadastro, edição, remoção e listagem única.'
+        },
+        {
+            id: 2,
+            title: "Portfolio React",
+            type: "Aplicados",
+            tech: "Frontend",
+            technologies: ["React", "CSS3", "JavaScript", "Vite"],
+            skills: ["Componentes", "Hooks", "Responsividade"],
+            description: "",
+            backgroundImage: "/assets/frontend-aplicado-react.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 3,
+            title: "OnePage Bootstrap",
+            type: "Estudos",
+            tech: "Frontend",
+            technologies: ["Bootstrap", "Responsividade", "Design"],
+            skills: ["Bootstrap", "Responsividade", "Design"],
+            description: "",
+            backgroundImage: "/assets/frontend-estudo-bootstrap.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 4,
+            title: "Desafio DevJava Itaú",
+            type: "Estudos",
+            tech: "Backend",
+            technologies: ["Java", "Spring Boot", "MySQL", "API"],
+            skills: ["Java", "CRUD", "POO"],
+            description: "",
+            backgroundImage: "/assets/backend-estudo-java.jpg",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 5,
+            title: "MVC Relógio Ponto",
+            type: "Estudos",
+            tech: "Full Stack",
+            technologies: ["JavaScript", "MVC", "API", "Bootstrap"],
+            skills: ["MVC", "API", "JWT"],
+            description: "",
+            backgroundImage: "/assets/full-stack-estudo-javascript-mvc.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 6,
+            title: "Monta Lanche VueJS",
+            type: "Estudos",
+            tech: "Frontend",
+            technologies: ["Vue.js", "JavaScript", "CSS3", "API"],
+            skills: ["Reatividade", "Data-Binding", "Computed"],
+            description: "",
+            backgroundImage: "/assets/frontend-estudo-vue.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 7,
+            title: "MVC STUP",
+            type: "Estudos",
+            tech: "Full Stack",
+            technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
+            skills: ["MVC", "Bootstrap", "API"],
+            description: "",
+            backgroundImage: "/assets/full-stack-estudo-javascript-mvc2.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 8,
+            title: "BarCodeReader",
+            type: "Aplicados",
+            tech: "Backend",
+            technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
+            skills: ["Python", "RPA", "Tkinter"],
+            description: "",
+            backgroundImage: "/assets/backend-aplicado-barcode.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 9,
+            title: "PDF to Excel Automation",
+            type: "Aplicados",
+            tech: "Backend",
+            technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
+            skills: ["Python", "Excel", "RPA"],
+            description: "",
+            backgroundImage: "/assets/backend-aplicado-pdf-to-excel.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        {
+            id: 10,
+            title: "Extensão downloader .card-body",
+            type: "Aplicados",
+            tech: "Backend",
+            technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
+            skills: ["Javascript", "Manipulação de DOM", "RPA"],
+            description: "",
+            backgroundImage: "/assets/backend-aplicado-glpi-card.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        },
+        ,
+        {
+            id: 11,
+            title: "Avaliador de Hackathon",
+            type: "Aplicados",
+            tech: "Full Stack",
+            technologies: ["JavaScript", "MVC", "MySQL", "Bootstrap"],
+            skills: ["PHP", "Wordpress", "Plugin próprio"],
+            description: "",
+            backgroundImage: "/assets/full-stack-aplicado-hack.png",
+            videoUrl: "",
+            liveLink: "",
+            linkedinPost: "",
+            impact: ""
+        }
+
+    ];
 
     // Filtrar projetos
     const filteredProjects = projects.filter(project => {
@@ -121,7 +179,7 @@ const projects = [
         <section className="project section" id="projetos">
             <h2 className="section__title">Projetos</h2>
             <span className="section__subtitle">Projetos/Estudos mais recentes.</span>
-            
+
             <div className="project__container container grid">
                 <div className="project__header">
                     <div className="project__type-project">
@@ -151,7 +209,7 @@ const projects = [
 
                 <div className="project__content">
                     {filteredProjects.map(project => (
-                        <div 
+                        <div
                             key={project.id}
                             className="project__box"
                             style={{ backgroundImage: `url(${project.backgroundImage})` }}
@@ -160,7 +218,7 @@ const projects = [
                             <div className="project__box-overlay">
                                 <div className="project__box-view">
 
-                                <h3 className="project__box-title">{project.title}</h3>
+                                    <h3 className="project__box-title">{project.title}</h3>
                                 </div>
                                 <div className="project__box-tags">
                                     <span className="project__tag project__tag--type">{project.type}</span>
@@ -185,59 +243,55 @@ const projects = [
                             <button className="project__modal-close" onClick={() => setSelectedProject(null)}>
                                 <i className="uil uil-times"></i>
                             </button>
-                            
+
                             <div className="project__modal-content">
                                 <h2 className="project__modal-title">{selectedProject.title}</h2>
-                                
+
                                 {/* Vídeo - só carrega quando o modal abrir */}
                                 {selectedProject.videoUrl && (
                                     <div className="project__video-container">
-                                        <iframe
-                                            src={selectedProject.videoUrl}
-                                            title={`Vídeo do projeto ${selectedProject.title}`}
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                            loading="lazy"
-                                        ></iframe>
+                                       
+                                        <iframe className="project__video"
+                                            src="https://www.youtube.com/embed/euDs0fC0pe8?si=ZuvIEWtHi7QmMtvz"
+                                            title="YouTube video player"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin"
+                                            allowfullscreen>
+
+                                        </iframe>
                                     </div>
+
                                 )}
-                                
-                                <p className="project__modal-description">{selectedProject.description}</p>
-                                
+
                                 <div className="project__modal-links">
-                                    {selectedProject.linkedinPost && (
-                                        <a 
-                                            href={selectedProject.linkedinPost} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="project__modal-link project__modal-link--linkedin"
-                                        >
-                                            <i className="uil uil-linkedin"></i>
-                                            Ver no LinkedIn
-                                        </a>
-                                    )}
-                                    
+
+
                                     {selectedProject.liveLink && (
-                                        <a 
-                                            href={selectedProject.liveLink} 
-                                            target="_blank" 
+                                        <a
+                                            href={selectedProject.liveLink}
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             className="project__modal-link project__modal-link--live"
                                         >
-                                            <FaGithub />
-                                            Ver Projeto
+                                            <FaGithub className="project__link-icon" />
+                                            Ver Projeto ao vivo
+
                                         </a>
                                     )}
                                 </div>
-                                
+
+                                <p className="project__modal-description">{selectedProject.description}</p>
+
+
+
                                 <div className="project__tech-list">
                                     {selectedProject.technologies.map((tech, index) => (
                                         <span key={index} className="project__tech-item">{tech}</span>
                                     ))}
                                 </div>
-                                
-                                <p className="project__modal-impact">{selectedProject.impact}</p>
+
+                                <p className="project__modal-impact"><strong>Impacto e visão técnica: </strong>{selectedProject.impact}</p>
                             </div>
                         </div>
                     </div>
