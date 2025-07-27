@@ -3,13 +3,42 @@ import "./header.css";
 
 
 const Header = () => {
-  // Toggle menu state
-  const[Toggle, showMenu] = useState(false);
-
-  // Theme toggle state
+  const [Toggle, showMenu] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
-  // Carrega o tema salvo no localStorage ao montar o componente
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header');
+      header.classList.toggle('scrolled', window.scrollY > 0);
+
+
+      const sections = ['home', 'sobre', 'projetos', 'habilidades', 'qualificacoes', 'contato'];
+      
+      let sessaoAtual = 'home';
+      
+      sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            sessaoAtual = sectionId;
+          }
+        }
+      });
+
+      setActiveSection(sessaoAtual);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // chama a função uma vez ao carregar para definir a seção inicial
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -18,7 +47,7 @@ const Header = () => {
     }
   }, []);
 
-  // Alterna entre os temas
+
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
@@ -40,38 +69,38 @@ const Header = () => {
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
             <li className="nav__item">
-              <a href="#home" className="nav__link active-link">
+              <a href="#home" className={`nav__link ${activeSection === 'home' ? 'active-link' : ''}`}>
                 <i className="uil uil-estate nav__icon"></i>
                 Home
               </a>
             </li>
             <li className="nav__item">
-              <a href="#sobre" className="nav__link">
+              <a href="#sobre" className={`nav__link ${activeSection === 'sobre' ? 'active-link' : ''}`}>
                 <i className="uil uil-user nav__icon"></i>
                 Sobre
               </a>
               
             </li>
             <li className="nav__item">
-              <a href="#habilidades" className="nav__link">
-                <i className="uil uil-wrench nav__icon"></i>
-                Habilidades
-              </a>
-            </li>
-            <li className="nav__item">
-              <a href="#qualificacoes" className="nav__link">
-                <i className="uil uil-file nav__icon"></i>
-                Experiências
-              </a>
-            </li>
-            <li className="nav__item">
-              <a href="#projetos" className="nav__link">
+              <a href="#projetos" className={`nav__link ${activeSection === 'projetos' ? 'active-link' : ''}`}>
                 <i className="uil uil-scenery nav__icon"></i>
                 Projetos
               </a>
             </li>
             <li className="nav__item">
-              <a href="#contato" className="nav__link">
+              <a href="#habilidades" className={`nav__link ${activeSection === 'habilidades' ? 'active-link' : ''}`}>
+                <i className="uil uil-wrench nav__icon"></i>
+                Ferramentas
+              </a>
+            </li>
+            <li className="nav__item">
+              <a href="#qualificacoes" className={`nav__link ${activeSection === 'qualificacoes' ? 'active-link' : ''}`}>
+                <i className="uil uil-file nav__icon"></i>
+                Experiências
+              </a>
+            </li>
+            <li className="nav__item">
+              <a href="#contato" className={`nav__link ${activeSection === 'contato' ? 'active-link' : ''}`}>
                 <i className="uil uil-at nav__icon"> </i>
                 Contato
               </a>

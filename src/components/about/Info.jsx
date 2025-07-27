@@ -18,7 +18,7 @@ const Info = () => {
                     Workshop
                 </h3>
                 <span className="about__subtitle">
-                    + 10 projetos desenvolvidos 
+                    + 20 projetos desenvolvidos 
                 </span>
             </div>
             <div className="about__box">

@@ -51,8 +51,19 @@
     margin-top: 2rem;
 }
 
+.project__star-title {
+    font-weight: var(--font-bold);
+    color: var(--cor-titulo);
+}
+
+.project__star-letter {
+    font-size: 1.25rem;
+    color: var(--cor-titulo-dark);
+    font-weight: var(--font-bold);
+}
+
 .project__box {
-    height: 275px;
+    height: 300px;
     border-radius: 1rem;
     background-size: cover;
     background-position: center;
@@ -218,6 +229,13 @@
     font-weight: var(--font-semi-bold);
     color: var(--cor-titulo-dark);
     margin-bottom: 1rem;
+}
+
+.project__modal-subtitle {
+    text-align: center;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    color: var(--cor-titulo-dark);
 }
 
 .project__modal-content p {

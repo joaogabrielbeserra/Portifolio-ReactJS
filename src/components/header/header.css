@@ -50,6 +50,10 @@
     color: var(--cor-titulo-dark);
 }
 
+.active-link {
+    font-weight: var(--font-bold);
+}
+
 
 .nav__actions {
     display: flex;

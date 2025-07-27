@@ -18,10 +18,10 @@ function App() {
       <main className="main ">
         <Home />
         <About />
+        <Projects />
         <Skills />
         <Qualification />
         <Services />
-        <Projects />
         <Contact />
         <Footer />
       </main>

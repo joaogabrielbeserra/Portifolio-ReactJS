@@ -34,54 +34,7 @@ const Certification = () => {
             icon: FaJava,
             institutionIcon: SiUdemy
         },
-        {
-            id: 3,
-            title: "Linguagem Java",
-            institution: "Udemy",
-            course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
-            linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e +  ",
-            link: "#",
-            icon: FaJava,
-            institutionIcon: SiUdemy
-        },
-        {
-            id: 4,
-            title: "Linguagem Java",
-            institution: "Udemy",
-            course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
-            linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e +  ",
-            link: "#",
-            icon: FaJava,
-            institutionIcon: SiUdemy
-        },
-        {
-             id: 5,
-            title: "Linguagem Java",
-            institution: "Udemy",
-            course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
-            linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e +  ",
-            link: "#",
-            icon: FaJava,
-            institutionIcon: SiUdemy
-        },
-        {
-            id: 6,
-           title: "Linguagem Java",
-            institution: "Udemy",
-            course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
-            linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e +  ",
-            link: "#",
-            icon: FaJava,
-            institutionIcon: SiUdemy
-        }
+
     ];
 
     const maxIndex = certifications.length - 1; // Última certificação (índice 5 para 6 cards)
