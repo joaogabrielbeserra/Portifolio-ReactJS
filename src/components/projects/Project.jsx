@@ -21,7 +21,7 @@ const Project = () => {
             skills: ["Design", "Responsividade", "Manipulação de Array"],
             description: "Foi um projeto com viés institucional para impulsionar o conhecimento municípe para os pontos de coleta de Caraguatatuba, foi feito para um amigo apresentar em seu curso técnico em meio ambiente, também foi usado como prova de conhecimento para eliminar a matéria de desenvolvimento web 1.",
             lista: ["Concepção do Layout, Design e Identidade Visual", "Biblioetca Bootstrap, SCSS e Responsividade", "Javascript e Manipulação de arrays"],
-            backgroundImage: "/assets/frontend-estudo-javascript.png",
+            backgroundImage: "/assets/frontend-estudo-javascript.gif",
             videoUrl: "https://youtu.be/euDs0fC0pe8?si=dCXZHlp_CUHi9F5C",
             liveLink: "https://portal-coscientizacao-reciclagem-bo.vercel.app/",
             linkedinPost: "",
@@ -267,7 +267,7 @@ const Project = () => {
                                             frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             referrerPolicy="strict-origin-when-cross-origin"
-                                            
+
                                             allowFullScreen>
 
                                         </iframe>
@@ -286,7 +286,7 @@ const Project = () => {
                                             >
                                                 <FaGithub className="project__link-icon" />
                                                 Ver Projeto ao vivo
-                                                <IoLogoVercel className="project__link-icon" /> 
+                                                <IoLogoVercel className="project__link-icon" />
                                             </a>
                                         )}
                                     </div>
@@ -318,7 +318,7 @@ const Project = () => {
                     </div>
                 )}
             </div>
-        </section>
+        </section >
     );
 }
 
