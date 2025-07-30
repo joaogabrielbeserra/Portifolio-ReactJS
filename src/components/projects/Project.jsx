@@ -57,7 +57,7 @@ const Project = () => {
             tech: "Frontend",
             technologies: ["Bootstrap", "SCSS", "Design", "Responsividade"],
             skills: ["Bootstrap", "Responsividade", "Design", "HTML"],
-        situacao: "Durante a matéria de inglês, precisava-se criar uma empresa, para inovar, fiz o site da empresa que seria nosso PPT, para exercitar conhecimentos de frontend, praticar e consolidar conhecimentos em Bootstrap para criar um layout responsivo profissional.",
+            situacao: "Durante a matéria de inglês, precisava-se criar uma empresa, para inovar, fiz o site da empresa que seria nosso PPT, para exercitar conhecimentos de frontend, praticar e consolidar conhecimentos em Bootstrap para criar um layout responsivo profissional.",
             tarefa: "Desenvolver uma página one-page utilizando Bootstrap para apresentar um site bonito e com as informações da apresentação com design responsivo.",
             acao: "Criei uma aplicação single-page explorando componentes do Bootstrap, sistema de grid, componentes responsivos e customização de estilos.",
             resultados: "Conclui em 3 dias, o projeto consolidou conhecimentos em Bootstrap, a professora gostou da iniciativa inovadora e fiquei bem com os colegas",
@@ -209,7 +209,7 @@ const Project = () => {
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
-            gitHubLink  : "",
+            gitHubLink: "",
         },
         {
             id: 12,
@@ -228,6 +228,24 @@ const Project = () => {
             videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/fatura-extractor-automation",
+        },
+        {
+            id: 13,
+            title: "Automação de PDFs para Planilhas com Python e Pandas",
+            date: "08/2025",
+            type: "Aplicados",
+            tech: "Backend",
+            technologies: ["Python", "pdfplumber", "Pandas", "BBox", "RPA"],
+            skills: ["Python", "PDF", "Pandas", "Excel", "RPA"],
+            situacao: "Um colaborador precisava extrair dados de um grande volume de PDFs e organizá-los em uma planilha estruturada. Diante da minha proficiência em Python, ele me procurou solicitando uma solução automatizada para esse processo.",
+            tarefa: "Desenvolver um sistema de automação para leitura de faturas em PDF, extração das colunas principais (Matrículas e Nomes), preenchimento automático de planilha.",
+            acao: "Implementei um script em Python utilizando as bibliotecas `pdfplumber` para leitura de PDFs e `pandas` para tratamento e exportação dos dados. A automação incluiu leitura por coordenadas (BBox), garantindo precisão na extração de colunas específicas.",
+            resultados: "O script foi desenvolvido e entregue no mesmo dia, resultando em uma planilha com os dados organizados e validados. O colaborador ficou altamente satisfeito com a automação, e o projeto me proporcionou domínio prático em leitura estruturada de PDFs e manipulação de dados com Pandas.",
+            backgroundUrl: "/assets/backend-aplicado-pdf.png",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "https://github.com/JGabrielFBeserra/pdf-to-excel-pandas"
         }
     ];
 
@@ -249,7 +267,7 @@ const Project = () => {
             return `https://www.youtube.com/embed/${id}`; //retorno com o embed para funcioar no iframe
         }
 
-        return videoUrl; 
+        return videoUrl;
     }
 
 
@@ -328,7 +346,7 @@ const Project = () => {
                                         </a>
                                     </div>
                                 )}
-                              
+
                                 <hr></hr>
                                 <br />
                                 {selectedProject.videoUrl && (
