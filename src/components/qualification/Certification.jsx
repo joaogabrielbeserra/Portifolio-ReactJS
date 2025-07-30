@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaCertificate,   FaJava, FaJs, FaReact, FaNode, FaGitAlt, FaDatabase } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCertificate, FaDocker ,   FaJava, FaJs, FaReact, FaNode, FaGitAlt, FaDatabase } from "react-icons/fa";
 import { SiCisco, SiMeta, SiGithub, SiOracle, SiUdemy } from "react-icons/si";
 import { FaFileImport } from "react-icons/fa6";
 
@@ -24,14 +24,14 @@ const Certification = () => {
         },
         {
             id: 2,
-            title: "Linguagem Java",
+            title: "Docker",
             institution: "Udemy",
-            course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
+            course: "[2025] DOMINE a tecnologia DOCKER para a criação de Ambientes Locais de Desenvolvimentoava COMPLETO Programação Orientada a Objetos + Projetos",
             linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e +  ",
+            date: "15",
+            description: "Docker, Containers, Dockerfile, Docker Compose, Docker Hub, CLI, Imagens, Volumes, WSL, Linux e DevOps",
             link: "#",
-            icon: FaJava,
+            icon: FaDocker,
             institutionIcon: SiUdemy
         },
 

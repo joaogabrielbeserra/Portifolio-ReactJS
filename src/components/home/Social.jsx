@@ -1,4 +1,5 @@
 import React from "react";
+import { SiLeetcode } from "react-icons/si";
 
 
 const Social = () => {
@@ -15,8 +16,8 @@ const Social = () => {
             <a href="https://github.com/JGabrielFBeserra" className="home__social-icon" target="_blank">
                 <i className="uil uil-github"></i>
             </a>
-            <a href="https://open.spotify.com/user/y3ob1bcv74yp9hjsvr2sxy4z6?si=4a5ef8d0f1a74af8" className="home__social-icon" target="_blank">
-                <i className="uil uil-music"></i>
+            <a href="https://leetcode.com/u/jgabrielfbb/" className="home__social-icon" target="_blank">
+                <SiLeetcode />
             </a>
 
 

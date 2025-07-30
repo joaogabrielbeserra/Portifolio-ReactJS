@@ -90,7 +90,7 @@ const Header = () => {
             <li className="nav__item">
               <a href="#habilidades" className={`nav__link ${activeSection === 'habilidades' ? 'active-link' : ''}`}>
                 <i className="uil uil-wrench nav__icon"></i>
-                Ferramentas
+                Skills
               </a>
             </li>
             <li className="nav__item">
