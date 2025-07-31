@@ -26,7 +26,7 @@ const Certification = () => {
             id: 2,
             title: "Docker",
             institution: "Udemy",
-            course: "[2025] DOMINE a tecnologia DOCKER para a criação de Ambientes Locais de Desenvolvimentoava COMPLETO Programação Orientada a Objetos + Projetos",
+            course: "[2025] DOMINE a tecnologia DOCKER para a criação de Ambientes Locais de Desenvolvimento",
             linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
             date: "15",
             description: "Docker, Containers, Dockerfile, Docker Compose, Docker Hub, CLI, Imagens, Volumes, WSL, Linux e DevOps",
