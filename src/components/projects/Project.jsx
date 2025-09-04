@@ -246,6 +246,25 @@ const Project = () => {
             videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/pdf-to-excel-pandas"
+        },
+        {
+
+            "id": 14,
+            "title": "Extensão Chrome para Download Automático de Anexos",
+            "date": "08/2025",
+            "type": "Aplicados",
+            "tech": "Frontend",
+            "technologies": ["JavaScript", "Chrome APIs", "HTML", "CSS"],
+            "skills": ["JavaScript", "Extensão Chrome", "Automação", "UX"],
+            "situacao": "Após a migração dos processos do setor de Contas a Pagar para o GLPI, os colaboradores enfrentavam perda de tempo ao baixar manualmente anexos de chamados (PDFs, planilhas e imagens), precisando abrir cada arquivo e salvá-lo individualmente.",
+            "tarefa": "Criar uma extensão para o Google Chrome que automatizasse o download de múltiplos anexos diretamente dos chamados do GLPI, reduzindo cliques manuais e facilitando o arquivamento dos documentos.",
+            "acao": "Implementei uma extensão em JavaScript puro utilizando Chrome APIs, com interface popup interativa para seleção rápida dos anexos. Ao clicar na extensão, o colaborador pode escolher os arquivos desejados e baixá-los de uma só vez, sem precisar abrir cada item individualmente.",
+            "resultados": "A extensão reduziu o tempo médio de arquivamento de contas de 5 minutos para 2 minutos por processo. Considerando uma média de 60 a 70 contas semanais, o ganho foi de aproximadamente 60% de produtividade: economia de ~3 horas semanais, ~12 horas mensais e ~144 horas anuais por colaborador. A solução foi aplicada de forma interna, padronizando o processo e liberando tempo para atividades mais estratégicas.",
+            "backgroundUrl": "/assets/full-backend-aplicado-javascript-glpi.png",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "https://github.com/JGabrielFBeserra/glpi-pdf-excel-downloader"
         }
     ];
 
