@@ -20,17 +20,16 @@ const Qualification = () => {
             <div className="qualification__container container">
                 <div className="qualification__tabs">
                     <div className={ToggleState === 2 ?
-                        "qualification__button button--flex qualification__active" 
+                        "qualification__button button--flex qualification__active"
                         : "qualification__button button--flex"} onClick={() => toggleTab(2)}>
-                          <GiGymBag className="qualification__title-icon" /> 
+                        <GiGymBag className="qualification__title-icon" />
                         Profissional
                     </div>
                     <div className={ToggleState === 1 ?
-                        "qualification__button button--flex qualification__active" 
+                        "qualification__button button--flex qualification__active"
                         : "qualification__button button--flex"} onClick={() => toggleTab(1)}  >
-                       <FaGraduationCap className="qualification__title-icon" /> 
+                        <FaGraduationCap className="qualification__title-icon" />
                         Institucional
-                      
                     </div>
                 </div>
                 <div className="qualification__sections">
@@ -47,24 +46,19 @@ const Qualification = () => {
                                 </span>
                                 <div className="qualification__calendar">
                                     <LuCalendarArrowUp /> 2024.1 - Presente
-
                                 </div>
                             </div>
                             <div>
                                 <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                             </div>
-
                         </div>
                         <div className="qualification__data">
                             <div></div>
                             <div>
-                                <span className="qualification__rounder">
-
-                                </span>
+                                <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                                 <span className="qualification__rounder"></span>
-                               
                             </div>
                             <div>
                                 <h3 className="qualification__title">
@@ -77,20 +71,18 @@ const Qualification = () => {
                                 </span>
                                 <div className="qualification__calendar">
                                     <LuCalendarArrowUp /> 2023.1 - 2024.2
-
                                 </div>
                             </div>
-
                         </div>
-
-
-
                     </div>
+
                     <div className={ToggleState === 2 ? "qualification__content qualification__content-active" : "qualification__content "}>
+
+                        {/* 1. Dev BI Tamoios — ESQUERDA (mais recente, topo) */}
                         <div className="qualification__data">
                             <div>
                                 <h3 className="qualification__title">
-                                    Estagiário de Desenvolvimento
+                                    Desenvolvedor de Inteligência Empresarial
                                 </h3>
                                 <span className="qualification__subtitle">
                                     <a href="https://www.linkedin.com/company/concession%C3%A1ria-tamoios/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
@@ -98,26 +90,40 @@ const Qualification = () => {
                                     </a>
                                 </span>
                                 <div className="qualification__calendar">
-                                    <LuCalendarArrowUp /> 2024-05 - Presente
-
+                                    <LuCalendarArrowUp /> 2025-11 - Presente
                                 </div>
                             </div>
                             <div>
-                                <span className="qualification__rounder">
-
-                                </span>
+                                <span className="qualification__rounder"></span>
                                 <span className="qualification__line"></span>
                             </div>
+                            <div></div>
                         </div>
+
+                        {/* 2. Help Desk Tamoios — DIREITA */}
                         <div className="qualification__data">
                             <div></div>
                             <div>
-                                <span className="qualification__rounder">
-
-                                </span>
-                                <span className="qualification__line"></span>
                                 <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
                             </div>
+                            <div>
+                                <h3 className="qualification__title">
+                                    Estagiário de Help Desk
+                                </h3>
+                                <span className="qualification__subtitle">
+                                    <a href="https://www.linkedin.com/company/concession%C3%A1ria-tamoios/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+                                        Concessionária Tamoios
+                                    </a>
+                                </span>
+                                <div className="qualification__calendar">
+                                    <LuCalendarArrowUp /> 2025-05 - 2025-11
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* 3. Grupo Ideal — ESQUERDA (mais antigo, base) */}
+                        <div className="qualification__data">
                             <div>
                                 <h3 className="qualification__title">
                                     Estagiário de Infraestrutura
@@ -129,13 +135,13 @@ const Qualification = () => {
                                 </span>
                                 <div className="qualification__calendar">
                                     <LuCalendarArrowUp /> 2024-10 - 2025-04
-
                                 </div>
                             </div>
-
+                            <div>
+                                <span className="qualification__rounder"></span>
+                            </div>
+                            <div></div>
                         </div>
-
-                     
 
                     </div>
                 </div>

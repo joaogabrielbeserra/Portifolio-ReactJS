@@ -32,11 +32,11 @@
 .skills__name {
     display: flex;
     align-items: center;
-    font-size: var(--h3-font-size);
+    font-size: var(--h25-font-size);
 }
 
 .skills__subtitle {
-    font-size: var(--normal-font-size);
+    font-size: var(--menor-font-size);
 }
 
 .skills__data {

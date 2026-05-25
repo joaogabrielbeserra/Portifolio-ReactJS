@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaCertificate, FaDocker ,   FaJava, FaJs, FaReact, FaNode, FaGitAlt, FaDatabase } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCertificate, FaDocker, FaJava, FaJs, FaReact, FaNode, FaGitAlt, FaDatabase, FaAws, FaTrophy, FaChalkboardTeacher } from "react-icons/fa";
 import { SiCisco, SiMeta, SiGithub, SiOracle, SiUdemy } from "react-icons/si";
 import { FaFileImport } from "react-icons/fa6";
+import { PiCertificateBold } from "react-icons/pi";
 
 import './certification.css';
 
@@ -12,29 +13,88 @@ const Certification = () => {
     const certifications = [
         {
             id: 1,
+            title: "Formação Java",
+            institution: "Rocketseat",
+            course: "Formação Java",
+            linkCourse: "https://app.rocketseat.com.br/certificates/70c459b8-7580-4c1d-9db2-fc1fff6c22c9",
+            date: "out/2025",
+            description: "JPA, Java, Spring Boot, Hibernate, APIs REST e mais competências.",
+            link: "https://app.rocketseat.com.br/certificates/70c459b8-7580-4c1d-9db2-fc1fff6c22c9",
+            icon: FaJava,
+            institutionIcon: FaJava
+        },
+        {
+            id: 2,
+            title: "AWS Cloud Architecting",
+            institution: "Amazon Web Services (AWS)",
+            course: "AWS Academy Graduate - Cloud Architecting - Training Badge",
+            linkCourse: "https://www.credly.com/badges/a1d78fe6-2ea3-40eb-b328-c9097f68e288/linked_in_profile",
+            date: "dez/2025",
+            description: "Amazon S3, Amazon CloudFront, arquitetura em nuvem e mais competências AWS.",
+            link: "https://www.credly.com/badges/a1d78fe6-2ea3-40eb-b328-c9097f68e288/linked_in_profile",
+            icon: FaAws,
+            institutionIcon: FaAws
+        },
+        {
+            id: 3,
+            title: "Acelerando Projetos de Sucesso",
+            institution: "Universidade de São Paulo",
+            course: "Acelerando Projetos de Sucesso",
+            linkCourse: "https://uspdigital.usp.br/apolo/extDiplomaBaixar.jsp?codpubmtr=D1B1CEAEE7BD&nomsis=Apolo&codund=11&codcurceu=110400146&codedicurceu=25001&numseqofeedi=1",
+            date: "out/2025",
+            description: "Scrum, Metodologias Agile, gestão de projetos e mais competências.",
+            link: "https://uspdigital.usp.br/apolo/extDiplomaBaixar.jsp?codpubmtr=D1B1CEAEE7BD&nomsis=Apolo&codund=11&codcurceu=110400146&codedicurceu=25001&numseqofeedi=1",
+            icon: PiCertificateBold,
+            institutionIcon: PiCertificateBold
+        },
+        {
+            id: 4,
             title: "Linguagem Java",
             institution: "Udemy",
             course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
             linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e +  ",
-            link: "#",
+            date: "54.5 horas",
+            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e mais.",
+            link: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
             icon: FaJava,
             institutionIcon: SiUdemy
         },
         {
-            id: 2,
-            title: "Docker",
+            id: 5,
+            title: "Docker Zero a Profissional",
             institution: "Udemy",
-            course: "[2025] DOMINE a tecnologia DOCKER para a criação de Ambientes Locais de Desenvolvimento",
-            linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "15",
-            description: "Docker, Containers, Dockerfile, Docker Compose, Docker Hub, CLI, Imagens, Volumes, WSL, Linux e DevOps",
-            link: "#",
+            course: "Docker Zero a Profissional para Desenvolvimento Web",
+            linkCourse: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-5d72fe45-db04-45c3-89d5-6a314a1838b1.pdf",
+            date: "set/2025",
+            description: "Docker, Containers, Dockerfile, Docker Compose, Docker Hub, CLI, Imagens, Volumes, WSL, Linux e DevOps.",
+            link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-5d72fe45-db04-45c3-89d5-6a314a1838b1.pdf",
             icon: FaDocker,
             institutionIcon: SiUdemy
         },
-
+        {
+            id: 6,
+            title: "Palestrante — Minicurso Python",
+            institution: "IFSP",
+            course: "Palestrante Minicurso - Introdução a Linguagem Python",
+            linkCourse: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
+            date: "ago/2025",
+            description: "Docência, Programação Orientada a Objetos, introdução ao Python e mais competências.",
+            link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
+            icon: FaChalkboardTeacher,
+            institutionIcon: PiCertificateBold
+        },
+        {
+            id: 7,
+            title: "3º Lugar Hackathon IFSP 2025",
+            institution: "IFSP",
+            course: "3º Lugar Hackathon IFSP 2025",
+            linkCourse: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
+            date: "jun/2025",
+            description: "Desenvolvimento de solução em equipe, versionamento com Git e inovação tecnológica.",
+            link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
+            icon: FaTrophy,
+            institutionIcon: PiCertificateBold
+        },
     ];
 
     const maxIndex = certifications.length - 1; // Última certificação (índice 5 para 6 cards)

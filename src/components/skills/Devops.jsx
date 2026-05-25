@@ -1,7 +1,6 @@
 import React from "react";
-import { FaDocker, FaGitAlt, FaGithub } from "react-icons/fa";
+import { FaDocker, FaGitAlt, FaGithub, FaAws } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
-
 
 const Devops = () => {
     return (
@@ -13,58 +12,64 @@ const Devops = () => {
                 <div className="skills__group">
 
                     <div className="skills__data">
-
                         <div className="">
                             <h3 className="skills__name">
-                                <FaGitAlt className="skills__icon" />    Git - &nbsp; <p className="skills__subtitle">Intermediário</p>
+                                <FaGitAlt className="skills__icon" /> Git - &nbsp; <p className="skills__subtitle">Avançado</p>
                             </h3>
                             <span className="skills__level">
-                                Versionamento é essencial, manjo o suficiente.
+                                Versionamento no dia a dia, branches, merges, rebase e resolução de conflitos.
                             </span>
                         </div>
                     </div>
+
                     <div className="skills__data">
-
                         <div className="">
                             <h3 className="skills__name">
-                                <FaGithub className="skills__icon" />    GitHub - &nbsp; <p className="skills__subtitle">Intermediário</p>
+                                <FaGithub className="skills__icon" /> GitHub - &nbsp; <p className="skills__subtitle">Avançado</p>
                             </h3>
                             <span className="skills__level">
-                                Já trabalhei sozinho e em equipe, sei como me portar.
+                                Trabalho solo e em equipe, PRs, code review e organização de repositórios.
                             </span>
                         </div>
                     </div>
+
                     <div className="skills__data">
-
                         <div className="">
                             <h3 className="skills__name">
-                                <FaDocker className="skills__icon" />    Docker - &nbsp; <p className="skills__subtitle">Básico</p>
+                                <FaDocker className="skills__icon" /> Docker - &nbsp; <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
-                                Já subi dois containers, sei o básico para poder usar.
+                                Containers, Docker Compose e deploy On-premise em projetos reais.
                             </span>
                         </div>
                     </div>
+
                     <div className="skills__data">
-
                         <div className="">
                             <h3 className="skills__name">
-                                <IoLogoVercel className="skills__icon" />    Vercel - &nbsp; <p className="skills__subtitle">Básico</p>
+                                <FaAws className="skills__icon" /> AWS - &nbsp; <p className="skills__subtitle">Fundamental</p>
                             </h3>
                             <span className="skills__level">
-                                Utilizo para subir meus projetos.
+                                Curso AWS Cloud Practitioner concluído com badge conquistado.
                             </span>
                         </div>
                     </div>
 
-
+                    <div className="skills__data">
+                        <div className="">
+                            <h3 className="skills__name">
+                                <IoLogoVercel className="skills__icon" /> Vercel - &nbsp; <p className="skills__subtitle">Básico</p>
+                            </h3>
+                            <span className="skills__level">
+                                Deploy de projetos frontend e portfólio pessoal.
+                            </span>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
-
     )
-
 }
 
 export default Devops;
