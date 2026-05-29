@@ -95,6 +95,18 @@ const Certification = () => {
             icon: FaTrophy,
             institutionIcon: PiCertificateBold
         },
+        {
+            id: 8,
+            title: "Oracle Cloud Foundations Associate",
+            institution: "Oracle",
+            course: "Oracle Cloud Foundations Associate",
+            linkCourse: "https://www.oracle.com/certview", // Substitua pelo link real de validação ou do seu arquivo se preferir
+            date: "mai/2026",
+            description: "Certificação de fundamentos em Oracle Cloud Infrastructure (OCI). Competências: Banco de dados Oracle, Oracle Cloud. Credencial: 328507770OCI25FNDCFA (Válida até mai/2028).",
+            link: "https://www.oracle.com/certview", // Substitua pelo link do botão "Exibir credencial"
+            icon: PiCertificateBold,
+            institutionIcon: PiCertificateBold
+        },
     ];
 
     const maxIndex = certifications.length - 1; // Última certificação (índice 5 para 6 cards)
@@ -164,7 +176,7 @@ const Certification = () => {
 
                                             </span>
                                         </p>
-                                        <a href={cert.linkCourse} target="_blank" className="certification__card-title"> {cert.course} : ({cert.date} Horas)</a>
+                                        <a href={cert.linkCourse} target="_blank" className="certification__card-title"> {cert.course} : ({cert.date})</a>
                                         
                                         <p className="certification__card-description">- {cert.description}</p>
                                         <div className="certificaton__card-link">

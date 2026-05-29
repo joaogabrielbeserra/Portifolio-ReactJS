@@ -1,6 +1,7 @@
 import React from "react";
 import { FaDocker, FaGitAlt, FaGithub, FaAws } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
+import { SiOracle } from "react-icons/si"; // Importação adicionada
 
 const Devops = () => {
     return (
@@ -44,10 +45,22 @@ const Devops = () => {
                         </div>
                     </div>
 
+                    {/* Adicionado o bloco do Oracle Cloud */}
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <FaAws className="skills__icon" /> AWS - &nbsp; <p className="skills__subtitle">Fundamental</p>
+                                <SiOracle className="skills__icon" /> Oracle Cloud - &nbsp; <p className="skills__subtitle">Básico</p>
+                            </h3>
+                            <span className="skills__level">
+                                Certificado Oracle Cloud Infrastructure (OCI) Foundations Associate.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="skills__data">
+                        <div className="">
+                            <h3 className="skills__name">
+                                <FaAws className="skills__icon" /> AWS - &nbsp; <p className="skills__subtitle">Intermedia'rio</p>
                             </h3>
                             <span className="skills__level">
                                 Curso AWS Cloud Practitioner concluído com badge conquistado.

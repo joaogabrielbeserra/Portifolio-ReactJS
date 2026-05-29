@@ -4,14 +4,14 @@ import { MdEmail } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 import './contact.css';
 
-const SERVICE_ID = "SEU_SERVICE_ID";
-const TEMPLATE_ID = "SEU_TEMPLATE_ID";
-const PUBLIC_KEY = "SUA_PUBLIC_KEY";
+// zoa nao carai, deixe isso aqui quieto, mania sua de ficar fuxicando hein
+const SERVICE_ID = "service_2fg06yd";
+const TEMPLATE_ID = "template_1j8nqlr";
+const PUBLIC_KEY = "RP1MiW6N7hBUW-xa6";
 
 const Contact = () => {
     const formRef = useRef();
-    const [status, setStatus] = useState("idle"); // idle | sending | success | error
-
+    const [status, setStatus] = useState("idle");
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus("sending");
@@ -71,7 +71,7 @@ const Contact = () => {
 
                 <div className="contact__content">
                     <h3 className="contact__title">
-                        Faça um orçamento!
+                        Fale comigo ! (o forms funciona e envia email viu)
                     </h3>
                     <form ref={formRef} onSubmit={handleSubmit} className="contact__form">
                         <div className="contact__form-div">

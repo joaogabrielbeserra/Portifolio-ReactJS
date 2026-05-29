@@ -66,38 +66,8 @@ const Frontend = () => {
                         </div>
                     </div>
 
-                    <div className="skills__data">
-                        <div className="">
-                            <h3 className="skills__name">
-                                <FaWordpress className="skills__icon" /> Wordpress - &nbsp; <p className="skills__subtitle">Básico</p>
-                            </h3>
-                            <span className="skills__level">
-                                Desenvolvimento de plugins e projetos institucionais.
-                            </span>
-                        </div>
-                    </div>
 
-                    <div className="skills__data">
-                        <div className="">
-                            <h3 className="skills__name">
-                                <FaSass className="skills__icon" /> Sass - &nbsp; <p className="skills__subtitle">Fundamental</p>
-                            </h3>
-                            <span className="skills__level">
-                                Estilização em projetos Bootstrap com variáveis e mixins.
-                            </span>
-                        </div>
-                    </div>
 
-                    <div className="skills__data">
-                        <div className="">
-                            <h3 className="skills__name">
-                                <FaVuejs className="skills__icon" /> Vue.js - &nbsp; <p className="skills__subtitle">Básico</p>
-                            </h3>
-                            <span className="skills__level">
-                                Estudei os conceitos principais, reatividade e data binding.
-                            </span>
-                        </div>
-                    </div>
 
                 </div>
             </div>
