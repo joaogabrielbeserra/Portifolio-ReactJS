@@ -1,0 +1,296 @@
+/* ── MOSAIC GRID ───────────────────────────── */
+.mosaic-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2.5rem;
+}
+
+.mosaic-group {
+  display: grid;
+  gap: 8px;
+}
+
+/* ── CARD ──────────────────────────────────── */
+.card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--container-color);
+  border: 0.5px solid var(--border-color-alt, rgba(0, 0, 0, 0.08));
+  min-height: 140px;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card--empty {
+  cursor: default;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+}
+
+.card--full {
+  width: 100%;
+  height: 260px;
+}
+
+/* ── OVERLAY ───────────────────────────────── */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.05) 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  transition: background 0.3s ease;
+}
+
+.card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.93) 0%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* ── TÍTULO — sempre visível ───────────────── */
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.35;
+  margin: 0;
+  transition: margin-bottom 0.25s ease;
+}
+
+.card:hover .card-title {
+  margin-bottom: 10px;
+}
+
+/* ── HOVER CONTENT — oculto por padrão ─────── */
+.card-hover-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card:hover .card-hover-content {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* ── FRASE DE IMPACTO ──────────────────────── */
+.card-summary {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── STACK TAGS ────────────────────────────── */
+.card-stacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.card-stack {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+}
+
+/* ── CTA ───────────────────────────────────── */
+.card-cta {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+  margin: 0;
+}
+
+/* ── VER TODOS ─────────────────────────────── */
+.mosaic-show-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.mosaic-show-more__btn {
+  gap: 6px;
+}
+
+.mosaic-show-more__count {
+  font-size: 12px;
+  color: var(--text-color-light);
+}
+
+/* ── MODAL ─────────────────────────────────── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: var(--z-modal, 1000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal {
+  background: var(--body-color);
+  border-radius: 18px;
+  border: 0.5px solid var(--border-color-alt, rgba(0, 0, 0, 0.1));
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-video-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+}
+
+.modal-video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.modal-video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modal-body {
+  padding: 22px 26px 30px;
+}
+
+.modal-title {
+  font-size: var(--h3-font-size, 1.1rem);
+  font-weight: var(--font-medium, 500);
+  color: var(--title-color);
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.modal-date {
+  font-size: 12px;
+  color: var(--text-color-light);
+  margin-bottom: 16px;
+}
+
+.modal-description {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.modal-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.modal-skill {
+  font-size: 12px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--container-color);
+  color: var(--text-color);
+  border: 0.5px solid var(--border-color-alt, rgba(0, 0, 0, 0.1));
+}
+
+.modal-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-link {
+  font-size: 13px;
+  font-weight: var(--font-medium, 500);
+  padding: 9px 18px;
+  border-radius: 9px;
+  background: var(--container-color);
+  color: var(--title-color);
+  border: 0.5px solid var(--border-color-alt, rgba(0, 0, 0, 0.15));
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.modal-link:hover {
+  opacity: 0.8;
+}
+
+.modal-link.primary {
+  background: var(--first-color);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media screen and (max-width: 568px) {
+  .mosaic-group {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: unset !important;
+  }
+
+  .mosaic-group .card {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    height: 170px;
+  }
+
+  .modal {
+    max-height: 95vh;
+  }
+}

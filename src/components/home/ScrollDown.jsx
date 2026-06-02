@@ -39,7 +39,7 @@ const ScrollDown = () => {
                   }}
                 ></path>
               </svg>
-              <span className="home__scroll-name">Scrola pra baixo</span>
+          <span className="home__scroll-name">Explore</span>
      
             </a>
         </div>

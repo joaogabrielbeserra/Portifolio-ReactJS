@@ -1,223 +1,146 @@
-import React, { useState, useEffect, useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaCertificate, FaDocker, FaJava, FaJs, FaReact, FaNode, FaGitAlt, FaDatabase, FaAws, FaTrophy, FaChalkboardTeacher } from "react-icons/fa";
-import { SiCisco, SiMeta, SiGithub, SiOracle, SiUdemy } from "react-icons/si";
-import { FaFileImport } from "react-icons/fa6";
+import React from "react";
+import {
+    FaJava, FaDocker, FaAws, FaTrophy, FaChalkboardTeacher, FaExternalLinkAlt
+} from "react-icons/fa";
+import { SiOracle, SiUdemy  } from "react-icons/si";
 import { PiCertificateBold } from "react-icons/pi";
+import { BiRocket } from "react-icons/bi";
+import "./certification.css";
 
-import './certification.css';
+const certifications = [
+    {
+        id: 1,
+        title: "Formação Java",
+        description: "Back-end com Java moderno, APIs REST e ecossistema Spring.",
+        institution: "Rocketseat",
+        date: "out/2025",
+        tags: ["Java", "Spring Boot", "JPA", "Hibernate", "APIs REST"],
+        link: "https://app.rocketseat.com.br/certificates/70c459b8-7580-4c1d-9db2-fc1fff6c22c9",
+        Icon: FaJava,
+        InstitutionIcon: BiRocket,
+    },
+    {
+        id: 2,
+        title: "AWS Cloud Architecting",
+        description: "Arquitetura de soluções escaláveis e seguras na nuvem AWS.",
+        institution: "Amazon Web Services",
+        date: "dez/2025",
+        tags: ["Amazon S3", "CloudFront", "Arquitetura Cloud"],
+        link: "https://www.credly.com/badges/a1d78fe6-2ea3-40eb-b328-c9097f68e288/linked_in_profile",
+        Icon: FaAws,
+        InstitutionIcon: FaAws,
+    },
+    {
+        id: 3,
+        title: "Oracle Cloud Foundations Associate",
+        description: "Fundamentos de infraestrutura na Oracle Cloud.",
+        institution: "Oracle",
+        date: "mai/2026",
+        tags: ["OCI", "Oracle Cloud", "Banco de Dados"],
+        link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=9C133364477861D8F7F87C49AC010C3111D9886E29DBE892B8A8627261D7D4D0",
+        Icon: SiOracle,
+        InstitutionIcon: SiOracle,
+    },
+    {
+        id: 4,
+        title: "Acelerando Projetos de Sucesso",
+        description: "Gestão ágil de projetos com Scrum e metodologias modernas.",
+        institution: "USP",
+        date: "out/2025",
+        tags: ["Scrum", "Agile", "Gestão de Projetos"],
+        link: "https://uspdigital.usp.br/apolo/extDiplomaBaixar.jsp?codpubmtr=D1B1CEAEE7BD&nomsis=Apolo&codund=11&codcurceu=110400146&codedicurceu=25001&numseqofeedi=1",
+        Icon: PiCertificateBold,
+        InstitutionIcon: PiCertificateBold,
+    },
+    {
+        id: 5,
+        title: "Java Completo — POO + Projetos",
+        description: "Java do zero ao avançado com projetos reais e banco de dados.",
+        institution: "Udemy",
+        date: "54.5h",
+        tags: ["Java", "POO", "JDBC", "Spring Boot", "MongoDB"],
+        link: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
+        Icon: FaJava,
+        InstitutionIcon: SiUdemy,
+    },
+    {
+        id: 6,
+        title: "Docker Zero a Profissional",
+        description: "Containers, imagens, Docker Compose e práticas de DevOps.",
+        institution: "Udemy",
+        date: "set/2025",
+        tags: ["Docker", "Containers", "Docker Compose", "DevOps"],
+        link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-5d72fe45-db04-45c3-89d5-6a314a1838b1.pdf",
+        Icon: FaDocker,
+        InstitutionIcon: SiUdemy,
+    },
+    {
+        id: 7,
+        title: "Palestrante — Minicurso Python",
+        description: "Ministrei introdução ao Python para alunos do IFSP.",
+        institution: "IFSP",
+        date: "ago/2025",
+        tags: ["Python", "POO", "Docência"],
+        link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
+        Icon: FaChalkboardTeacher,
+        InstitutionIcon: PiCertificateBold,
+    },
+    {
+        id: 8,
+        title: "3º Lugar Hackathon IFSP 2025",
+        description: "Solução desenvolvida em equipe em tempo limitado.",
+        institution: "IFSP",
+        date: "jun/2025",
+        tags: ["Trabalho em equipe", "Git", "Inovação"],
+        link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
+        Icon: FaTrophy,
+        InstitutionIcon: PiCertificateBold,
+        highlight: true,
+    },
+];
 
 const Certification = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const cardRefs = useRef([]);
-
-    const certifications = [
-        {
-            id: 1,
-            title: "Formação Java",
-            institution: "Rocketseat",
-            course: "Formação Java",
-            linkCourse: "https://app.rocketseat.com.br/certificates/70c459b8-7580-4c1d-9db2-fc1fff6c22c9",
-            date: "out/2025",
-            description: "JPA, Java, Spring Boot, Hibernate, APIs REST e mais competências.",
-            link: "https://app.rocketseat.com.br/certificates/70c459b8-7580-4c1d-9db2-fc1fff6c22c9",
-            icon: FaJava,
-            institutionIcon: FaJava
-        },
-        {
-            id: 2,
-            title: "AWS Cloud Architecting",
-            institution: "Amazon Web Services (AWS)",
-            course: "AWS Academy Graduate - Cloud Architecting - Training Badge",
-            linkCourse: "https://www.credly.com/badges/a1d78fe6-2ea3-40eb-b328-c9097f68e288/linked_in_profile",
-            date: "dez/2025",
-            description: "Amazon S3, Amazon CloudFront, arquitetura em nuvem e mais competências AWS.",
-            link: "https://www.credly.com/badges/a1d78fe6-2ea3-40eb-b328-c9097f68e288/linked_in_profile",
-            icon: FaAws,
-            institutionIcon: FaAws
-        },
-        {
-            id: 3,
-            title: "Acelerando Projetos de Sucesso",
-            institution: "Universidade de São Paulo",
-            course: "Acelerando Projetos de Sucesso",
-            linkCourse: "https://uspdigital.usp.br/apolo/extDiplomaBaixar.jsp?codpubmtr=D1B1CEAEE7BD&nomsis=Apolo&codund=11&codcurceu=110400146&codedicurceu=25001&numseqofeedi=1",
-            date: "out/2025",
-            description: "Scrum, Metodologias Agile, gestão de projetos e mais competências.",
-            link: "https://uspdigital.usp.br/apolo/extDiplomaBaixar.jsp?codpubmtr=D1B1CEAEE7BD&nomsis=Apolo&codund=11&codcurceu=110400146&codedicurceu=25001&numseqofeedi=1",
-            icon: PiCertificateBold,
-            institutionIcon: PiCertificateBold
-        },
-        {
-            id: 4,
-            title: "Linguagem Java",
-            institution: "Udemy",
-            course: "Java COMPLETO Programação Orientada a Objetos + Projetos",
-            linkCourse: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            date: "54.5 horas",
-            description: "POO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e mais.",
-            link: "https://www.udemy.com/share/101scA3@4K7fSwiqjpDc2O0Hro9S6D-WL1Rh06dduxIfTuDSPrh99_FdE8O8Tf1JP34SkgR03A==/",
-            icon: FaJava,
-            institutionIcon: SiUdemy
-        },
-        {
-            id: 5,
-            title: "Docker Zero a Profissional",
-            institution: "Udemy",
-            course: "Docker Zero a Profissional para Desenvolvimento Web",
-            linkCourse: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-5d72fe45-db04-45c3-89d5-6a314a1838b1.pdf",
-            date: "set/2025",
-            description: "Docker, Containers, Dockerfile, Docker Compose, Docker Hub, CLI, Imagens, Volumes, WSL, Linux e DevOps.",
-            link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-5d72fe45-db04-45c3-89d5-6a314a1838b1.pdf",
-            icon: FaDocker,
-            institutionIcon: SiUdemy
-        },
-        {
-            id: 6,
-            title: "Palestrante — Minicurso Python",
-            institution: "IFSP",
-            course: "Palestrante Minicurso - Introdução a Linguagem Python",
-            linkCourse: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
-            date: "ago/2025",
-            description: "Docência, Programação Orientada a Objetos, introdução ao Python e mais competências.",
-            link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
-            icon: FaChalkboardTeacher,
-            institutionIcon: PiCertificateBold
-        },
-        {
-            id: 7,
-            title: "3º Lugar Hackathon IFSP 2025",
-            institution: "IFSP",
-            course: "3º Lugar Hackathon IFSP 2025",
-            linkCourse: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
-            date: "jun/2025",
-            description: "Desenvolvimento de solução em equipe, versionamento com Git e inovação tecnológica.",
-            link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
-            icon: FaTrophy,
-            institutionIcon: PiCertificateBold
-        },
-        {
-            id: 8,
-            title: "Oracle Cloud Foundations Associate",
-            institution: "Oracle",
-            course: "Oracle Cloud Foundations Associate",
-            linkCourse: "https://www.oracle.com/certview", // Substitua pelo link real de validação ou do seu arquivo se preferir
-            date: "mai/2026",
-            description: "Certificação de fundamentos em Oracle Cloud Infrastructure (OCI). Competências: Banco de dados Oracle, Oracle Cloud. Credencial: 328507770OCI25FNDCFA (Válida até mai/2028).",
-            link: "https://www.oracle.com/certview", // Substitua pelo link do botão "Exibir credencial"
-            icon: PiCertificateBold,
-            institutionIcon: PiCertificateBold
-        },
-    ];
-
-    const maxIndex = certifications.length - 1; // Última certificação (índice 5 para 6 cards)
-
-    const goToPrevious = () => {    
-        if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
-    };
-
-    const goToNext = () => {
-        if (currentIndex < maxIndex) setCurrentIndex(prev => prev + 1);
-    };
-
-    const goToCard = (cardIndex) => {
-        // Navega diretamente para o card específico
-        setCurrentIndex(cardIndex);
-    };
-
     return (
-        <div className="">
-            <h3 className="certification__title">
-                <FaCertificate className="certification__icon" />
-                Certificações
-            </h3>
+        <div className="cert-wrap">
+            <h3 className="cert-heading">Certificações</h3>
 
-            <div className="certification__container">
-                {/* Seta Esquerda */}
-                {currentIndex > 0 && (
-                    <button 
-                        className="certification__arrow certification__arrow--left"
-                        onClick={goToPrevious}
+            <div className="cert-grid">
+                {certifications.map(({ id, description, institution, date, tags, link, Icon, InstitutionIcon, highlight }) => (
+                    <a
+                        key={id}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`cert-card${highlight ? " cert-card--highlight" : ""}`}
                     >
-                        <FaChevronLeft />
-                    </button>
-                )}
+                        <div className="cert-card__top">
+                            <div className="cert-card__icon">
+                                <Icon />
+                            </div>
+                            <div className="cert-card__meta">
+                                <span className="cert-card__institution">
+                                    <InstitutionIcon className="cert-card__inst-icon" />
+                                    {institution}
+                                </span>
+                                <span className="cert-card__date">{date}</span>
+                            </div>
+                        </div>
 
-                {/* Cards visíveis */}
-                <div className="certification__viewport">
-                    <div 
-                        className="certification__track"
-                        style={{ transform: `translateX(-${(100 / 6) * currentIndex}%)` }}
-                    >
-                        {certifications.map((cert, index) => {
-                            const IconComponent = cert.icon;
-                            const InstitutionIcon = cert.institutionIcon;
+                    
+                        {description && (
+                            <p className="cert-card__description">{description}</p>
+                        )}
 
-                            return (
-                                <div 
-                                    className="certification__card" 
-                                    key={cert.id}
-                                    ref={el => cardRefs.current[index] = el}
-                                >
-                                    <div className="certification__card-header">
-                                        <div className="certification__badge">
-                                            <IconComponent />
-                                            
-                                        </div>
-                                        <div className="certification__badge-title">
-                                            <h4 className="">{cert.title}</h4>
-                                        </div>
-                                    </div>
-                                    <div className="certification__card-content">
-                                   
-                                        <p className="certification__card-institution">
-                                            <InstitutionIcon className="certification__institution-icon" />
-                                            <span className="certification__institution-name">
-                                            {cert.institution} 
+                        <div className="cert-card__tags">
+                            {tags.map((t, i) => (
+                                <span key={i} className="cert-card__tag">{t}</span>
+                            ))}
+                        </div>
 
-                                            </span>
-                                        </p>
-                                        <a href={cert.linkCourse} target="_blank" className="certification__card-title"> {cert.course} : ({cert.date})</a>
-                                        
-                                        <p className="certification__card-description">- {cert.description}</p>
-                                        <div className="certificaton__card-link">
-                                            <a 
-                                            href={cert.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="certification__card-link"
-                                        >
-                                            Ver Certificado <FaFileImport className="qualification__card-link-icon"/>
-                                        </a>
-                                            </div>
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* Seta Direita */}
-                {currentIndex < maxIndex && (
-                    <button 
-                        className="certification__arrow certification__arrow--right"
-                        onClick={goToNext}
-                    >
-                        <FaChevronRight />
-                    </button>
-                )}
-            </div>
-
-            {/* Indicadores (bolinhas) - uma para cada card */}
-            <div className="certification__dots">
-                {certifications.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`certification__dot ${
-                            index === currentIndex ? 'certification__dot--active' : ''
-                        }`}
-                        onClick={() => goToCard(index)}
-                        aria-label={`Ir para certificação ${index + 1}`}
-                    />
+                        <span className="cert-card__link">
+                            Ver certificado <FaExternalLinkAlt />
+                        </span>
+                    </a>
                 ))}
             </div>
         </div>

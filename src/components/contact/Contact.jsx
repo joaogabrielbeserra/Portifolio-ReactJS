@@ -71,7 +71,7 @@ const Contact = () => {
 
                 <div className="contact__content">
                     <h3 className="contact__title">
-                        Fale comigo ! (o forms funciona e envia email viu)
+                        Fale comigo! 
                     </h3>
                     <form ref={formRef} onSubmit={handleSubmit} className="contact__form">
                         <div className="contact__form-div">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
 import ProjectCard from "./ProjectCard";
+import MosaicProject from "./MosaicProject";
 
 import './project.css';
 
@@ -15,70 +16,101 @@ const Project = () => {
     const projects = [
         {
             id: 1,
-            title: "OnePage Bootstrap",
-            date: "06/2024",
-            type: "Aplicados",
-            tech: "Frontend",
-            technologies: ["Bootstrap", "JavaScript", "CSS3", "HTML5", "SCSS"],
-            skills: ["Bootstrap", "Responsividade", "Manipulação de Array", "JavaScript"],
-            situacao: "Um colega precisava apresentar uma solução digital para mapear iniciativas de reciclagem. O projeto também foi usado como prova de conhecimento para eliminar a disciplina de desenvolvimento web 1.",
-            tarefa: "Construir uma aplicação one-page que permitisse visualizar, cadastrar e editar iniciativas sustentáveis em um layout responsivo e didático para o público geral.",
-            acao: "Projetei o layout usando Bootstrap, SCSS, HTML CSS e Javascript. Criei um CRUD local com JavaScript puro para manipular dados de iniciativas diretamente na interface. Tudo foi desenvolvido em uma semana e entregue em tempo para apresentação. ",
-            resultados: "A solução foi bem recebida pelos avaliadores e pelo professor. Meu colega conseguiu nota máxima e eu eliminei a disciplina por proficiência. Foi um exercício importante para consolidar Bootstrap, lógica de CRUD e boas práticas de design responsivo.",
-            backgroundUrl: "/assets/frontend-estudo-javascript.png",
-            gifUrl: "/assets/frontend-estudo-javascript.gif",
-            videoUrl: "https://youtu.be/-d78wj6wEzM",
-            siteUrl: "https://portal-coscientizacao-reciclagem-bo.vercel.app/",
-            gitHubLink: "https://github.com/JGabrielFBeserra/Portal-Coscientizacao-Reciclagem-Bootstrap.git",
+            title: "Sistema de Mercado Interno",
+            date: "",
+            skills: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker", "JWT", "Tailwind CSS"],
+            shortDescription: "Ecossistema integrado com totem, portal do colaborador e dashboard administrativo para mais de 300 colaboradores.",
+            description: "Ecossistema completo para o mercado interno da Concessionária Tamoios: totem de autoatendimento estilo McDonalds, portal do colaborador e dashboard administrativo. Adotado por mais de 300 colaboradores, economizando 25 horas mensais da equipe de gestão.",
+            backgroundUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "",
+            size: "large",
         },
+
         {
             id: 2,
+            title: "STUP — Sistema de Transporte Público",
+            date: "11/2024",
+            skills: ["Node", "Express", "MySQL", "Bootstrap", "JavaScript"],
+            shortDescription: "Sistema de gestão de transporte público com usuários, cartões, ônibus, motoristas e painel administrativo.",
+            description: "Sistema de transporte público reconstruído do zero após perda do projeto original por falta de versionamento. Inclui gerenciamento de usuários, cartões, motoristas, ônibus e dashboard administrativo.",
+            backgroundUrl: "/assets/full-stack-estudo-javascript-mvc2.png",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "https://github.com/JGabrielFBeserra/STUP",
+            size: "large",
+        },
+
+        {
+            id: 3,
+            title: "Dataset de Fauna — Visão Computacional",
+            date: "2025",
+            skills: ["Python", "Deep Learning", "YOLO", "Visão Computacional", "Anotação de Dados", "Machine Learning"],
+            shortDescription: "Pipeline de visão computacional para monitoramento automatizado de fauna na Serra do Mar.",
+            description: "Pesquisa aplicada em parceria entre IFSP-CAR e Concessionária Tamoios para monitoramento automatizado de fauna na Serra do Mar.",
+            backgroundUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
+            id: 4,
+            title: "BioDex — Parque Natural Juqueriquerê",
+            date: "jan–jun 2024",
+            skills: ["Node.js", "React Native", "PostgreSQL", "JWT", "Socket.io", "Expo", "Tamagui"],
+            shortDescription: "Totens digitais, app mobile e gamificação para gestão de visitas e educação ambiental.",
+            description: "Sistema desenvolvido em parceria com prefeitura, incluindo QR Codes, rankings, exportações e dashboard.",
+            backgroundUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "https://lnkd.in/gbBcms8D",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
+            id: 5,
+            title: "Sistema Controle de Ponto",
+            date: "05/2025",
+            skills: ["MVC", "API REST", "JWT", "Javascript", "Prisma"],
+            shortDescription: "Controle acadêmico de frequência com autenticação, CRUD e relatórios automatizados.",
+            description: "Sistema acadêmico de controle de frequência com autenticação JWT, CRUD completo e geração de relatórios PDF.",
+            backgroundUrl: "/assets/full-stack-estudo-javascript-mvc.png",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "https://github.com/JGabrielFBeserra/sistema-controle-ponto",
+            size: "large",
+        },
+        {
+            id: 6,
             title: "Portfolio React",
             date: "07/2025",
             type: "Aplicados",
             tech: "Frontend",
-            technologies: ["React", "CSS3", "JavaScript", "Vite"],
-            skills: ["React", "Javascript", "Responsividade", "CSS3", "Vite", "Hooks", "Componentização", "Design"],
-            situacao: "Precisava criar um portfólio profissional moderno para apresentar meus projetos e habilidades técnicas de forma organizada e que atrativa fosse atrativa para recrutadores.",
-            tarefa: "Desenvolver um portfólio responsivo usando React, com componentes reutilizáveis, tema escuro/claro, navegação suave, seções bem estruturadas e código limpo",
-            acao: "Construí toda aplicação em 2 semanasa com React e Vite, implementei um sistema de temas, scroll com navegação ativa, componentes modulares e layout responsivo com CSS Grid e variáveis definidas com Root: para exercitar os conhecimentos do CSS3",
-            resultados: "Portfolio funcional e moderno que demonstra proficiência em React, boas práticas de desenvolvimento frontend e design responsivo. Facilita a apresentação de projetos para recrutadores, apresentando as informações chaves o mais fácil possível",
+            skills: ["React", "Javascript", "CSS3", "Vite", "Hooks"],
+            description: "Portfólio profissional construído com React e Vite em 2 semanas. Tema claro/escuro, scroll com navegação ativa e layout responsivo com CSS Grid.",
             backgroundUrl: "/assets/frontend-aplicado-react.png",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "https://jgabrielfbeserra.vercel.app/",
             gitHubLink: "https://github.com/JGabrielFBeserra/Portifolio-ReactJS",
+            size: "normal"
         },
         {
-            id: 3,
-            title: "OnePage Bootstrap",
-            date: "05/2024",
-            type: "Estudos",
-            tech: "Frontend",
-            technologies: ["Bootstrap", "SCSS", "Design", "Responsividade"],
-            skills: ["Bootstrap", "Responsividade", "Design", "HTML"],
-            situacao: "Durante a matéria de inglês, precisava-se criar uma empresa, para inovar, fiz o site da empresa que seria nosso PPT, para exercitar conhecimentos de frontend, praticar e consolidar conhecimentos em Bootstrap para criar um layout responsivo profissional.",
-            tarefa: "Desenvolver uma página one-page utilizando Bootstrap para apresentar um site bonito e com as informações da apresentação com design responsivo.",
-            acao: "Criei uma aplicação single-page explorando componentes do Bootstrap, sistema de grid, componentes responsivos e customização de estilos.",
-            resultados: "Conclui em 3 dias, o projeto consolidou conhecimentos em Bootstrap, a professora gostou da iniciativa inovadora e fiquei bem com os colegas",
-            backgroundUrl: "/assets/frontend-estudo-bootstrap.png",
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "",
-            gitHubLink: "https://github.com/JGabrielFBeserra/OnePage-Bootstrap",
-        },
-        {
-            id: 4,
+            id: 7,
             title: "API Transações Itaú",
             date: "01/2025",
             type: "Estudos",
             tech: "Backend",
-            technologies: ["Java 21", "Spring Boot 3.4.1", "Spring Web", "Spring Actuator", "Lombok", "Swagger/OpenAPI", "Gradle"],
-            skills: ["Java", "Spring Boot", "API REST", "Documentação API", "Logs"],
-            situacao: "Topei o desafio de programação do Itaú Unibanco que exigia desenvolver uma API REST para processar transações financeiras e calcular estatísticas em tempo real.",
-            tarefa: "Implementar uma API REST completa que recebe transações, armazena temporariamente e calcula estatísticas (count, sum, avg, min, max) baseadas em intervalos de tempo configuráveis.",
-            acao: "Desenvolvi com Java 21 e Spring Boot 3.4.1, implementei 3 endpoints principais (/transacao POST/DELETE e /estatistica GET), adicionei logs com SLF4J, tratamento de erros customizado, documentação automática com Swagger e validações de negócio.",
-            resultados: "API funcional que demonstra domínio completo do ecossistema Spring, boas práticas de desenvolvimento backend, arquitetura limpa com separação de responsabilidades e documentação profissional.",
+            skills: ["Java", "Spring Boot", "API REST", "Swagger", "Logs"],
+            description: "Desafio técnico do Itaú: API REST em Java 21 e Spring Boot que processa transações e calcula estatísticas em tempo real com documentação Swagger.",
             backgroundUrl: "/assets/backend-estudo-java.jpg",
             gifUrl: "",
             videoUrl: "",
@@ -86,71 +118,27 @@ const Project = () => {
             gitHubLink: "https://github.com/JGabrielFBeserra/Estudo-TesteDevJuniorJava-BancoItau",
         },
         {
-            id: 5,
-            title: "Sistema Controle de Ponto",
-            date: "05/2025",
-            type: "Estudos",
-            tech: "Full Stack",
-            technologies: ["Node.js", "Express", "Prisma ORM", "MySQL", "JWT", "BCrypt", "JavaScript", "HTML5", "CSS3", "PDFKit", "Zod"],
-            skills: ["MVC", "API REST", "JWT", "Javascript", "Prisma"],
-            situacao: "Durante a disciplina de Desenvolvimento Web 2, precisei desenvolver um projeto acadêmico completo que demonstrasse domínio de desenvolvimento web full-stack moderno com padrão MVC.",
-            tarefa: "Criar um sistema completo de controle de frequência e gestão de funcionários com autenticação JWT, CRUD completo, geração de relatórios PDF.",
-            acao: "Desenvolvi backend com Node.js + Express + Prisma ORM + MySQL, implementei autenticação JWT com BCrypt, sistema de logs estruturados, validação com Zod, geração de PDF com PDFKit e JavaScript vanilla.",
-            resultados: "Sistema completo aprovado com nota 9/10. Demonstra domínio de arquitetura MVC, segurança robusta, controle de permissões, CRUD completo e boas práticas de desenvolvimento web moderno.",
-            backgroundUrl: "/assets/full-stack-estudo-javascript-mvc.png",
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "",
-            gitHubLink: "https://github.com/JGabrielFBeserra/sistema-controle-ponto",
-        },
-        {
-            id: 6,
-            title: "Montador de Lanche - Vue.js",
-            date: "",
-            type: "Estudos",
-            tech: "Frontend",
-            technologies: ["Vue.js 2.7.16", "Bootstrap 5.3.3", "JavaScript", "HTML5", "CSS3", "v-model", "Computed Properties", "Data Binding"],
-            skills: ["Vue", "JavaScript", "Bootstrap", "Frontend", "Responsivo"],
-            situacao: "Para expandir conhecimentos frontend além do React, decidi estudar Vue.js através de um projeto prático que demonstrasse os conceitos fundamentais do framework.",
-            tarefa: "Desenvolver uma aplicação web interativa para montar lanches personalizados, implementando sistema reativo, data binding, computed properties e interface responsiva com Bootstrap.",
-            acao: "Criei uma página Vue.js que permite aos usuários escolher diferentes tipos de pão, carnes, saladas e molhos, com preview em tempo real do lanche montado através de imagens dinâmicas. Implementei reatividade com v-model, computed properties para lógica de imagens, data binding bidirecional e layout responsivo com Bootstrap.",
-            resultados: "Aplicação funcional que demonstra domínio dos conceitos Vue.js: instância Vue, sistema de dados reativo, computed properties, template binding e manipulação de eventos. Interface intuitiva com visualização dinâmica em tempo real dos ingredientes selecionados.",
-            backgroundUrl: "/assets/frontend-estudo-vue.png",
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "",
-            gitHubLink: "https://github.com/JGabrielFBeserra/Estudo-de-VueJS",
-        },
-        {
-            id: 7,
-            title: "STUP - Sistema de Transporte Público",
-            date: "11/2024",
-            type: "Estudos",
-            tech: "Full Stack",
-            technologies: ["Node.js", "Express.js", "EJS", "Prisma", "MySQL", "Bootstrap 5.3.3", "JavaScript", "HTML5", "CSS3", "Multer", "Chart.js", "Font Awesome", "CORS", "Dotenv"],
-            skills: ["Node", "Express", "MySQL", "Bootstrap", "JavaScript"],
-            situacao: "Como projeto de conclusão do segundo semestre, criei um sistema completo de transporte público que foi apresentado e funcionava perfeitamente. Porém, na época ainda não utilizava GitHub consistentemente e acabei perdendo o projeto completo.",
-            tarefa: "Recriar o sistema STUP do zero, implementando todas as funcionalidades que havia desenvolvido anteriormente: gerenciamento de usuários, cartões, motoristas, ônibus, linhas e dashboard administrativo.",
-            acao: "Estou reconstruindo a aplicação full-stack usando Node.js/Express, EJS, Prisma com MySQL e Bootstrap. Já implementei a estrutura base, alguns CRUDs, upload de arquivos com Multer e organização em sprints. O projeto atual no GitHub mostra o progresso da reconstrução, mas ainda não está completo como a versão original.",
-            resultados: "Apesar de ter perdido o projeto original completo que me resultou em um 10 na disciplina, a experiência me ensinou a importância do versionamento Git e sua postagem no Github. Estou aplicando esse aprendizado na reconstrução, que demonstra minha capacidade de desenvolvimento full-stack e persistência para recriar soluções complexas.",
-            backgroundUrl: "/assets/full-stack-estudo-javascript-mvc2.png",
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "",
-            gitHubLink: "https://github.com/JGabrielFBeserra/STUP",
-        },
-        {
             id: 8,
+            title: "OnePage Bootstrap",
+            date: "06/2024",
+            type: "Aplicados",
+            tech: "Frontend",
+            skills: ["Bootstrap", "JavaScript", "CSS3", "HTML5"],
+            description: "One-page para mapear iniciativas de reciclagem com CRUD local em JS puro. Serviu também como prova de proficiência na disciplina de Desenvolvimento Web 1.",
+            backgroundUrl: "/assets/frontend-estudo-javascript.png",
+            gifUrl: "/assets/frontend-estudo-javascript.gif",
+            videoUrl: "https://youtu.be/-d78wj6wEzM",
+            siteUrl: "https://portal-coscientizacao-reciclagem-bo.vercel.app/",
+            gitHubLink: "https://github.com/JGabrielFBeserra/Portal-Coscientizacao-Reciclagem-Bootstrap.git",
+        },
+        {
+            id: 9,
             title: "Leitor de Código de Barras na Tela",
             date: "01/2025",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "OpenCV", "pyzbar", "pyautogui", "tkinter"],
-            skills: ["Python", "Visão Computacional", "Automação", "OCR", "RPA"],
-            situacao: "Setor financeiro da empresa lidava com faturas digitais contendo códigos de barras sem números legíveis ou copiáveis, necessitando digitar manualmente números longos e propensos a erros.",
-            tarefa: "Desenvolver sistema para ler códigos de barras diretamente da tela do computador e copiar automaticamente para área de transferência, eliminando digitação manual e erros.",
-            acao: "Criei aplicação Python com interface transparente usando tkinter, captura de tela com pyautogui, processamento de imagem com OpenCV e decodificação com pyzbar. Implementei hotkey global (z+x+c), seleção visual de área, múltiplas escalas de processamento e sistema robusto de mensagens.",
-            resultados: "Sistema funcional que eliminou compra de leitor físico, automatizou processo manual, eliminou erros de digitação e aumentou velocidade de processamento de faturas. Inclui arquivos .bat para instalação e execução simplificada.",
+            skills: ["Python", "OpenCV", "Automação", "OCR", "RPA"],
+            description: "Interface transparente que lê códigos de barras diretamente da tela via hotkey e copia para a área de transferência. Eliminou a compra de leitor físico no setor financeiro.",
             backgroundUrl: "/assets/backend-aplicado-barcode.png",
             gifUrl: "",
             videoUrl: "",
@@ -158,17 +146,13 @@ const Project = () => {
             gitHubLink: "https://github.com/JGabrielFBeserra/print-codigodebarras-automation",
         },
         {
-            id: 9,
+            id: 10,
             title: "PDF to Excel Automation",
             date: "05/2025",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "pdfplumber", "openpyxl", "tkinter", "pyperclip"],
             skills: ["Python", "Automação", "Excel", "PDF", "RPA"],
-            situacao: "No setor da engenharia da empresa tinha o processo manual repetitivo de extrair dados de ordens de serviço em PDF e transferir para planilha Excel, isso estava consumindo horas de trabalho e causando erros humanos.",
-            tarefa: "Automatizar completamente a extração de dados estruturados de PDFs de ordens de serviço e inserção organizada em planilha Excel, mantendo formatação original.",
-            acao: "Desenvolvi script Python usando pdfplumber para extrair tabelas de PDFs, openpyxl para manipular Excel, tkinter para interface de seleção de arquivos. Implementei lógica para processar campos específicos, aplicar formatações automáticas, calcular fórmulas e preservar estilos da planilha.",
-            resultados: "Após uma semana de estudo e conversação com os colaboradores, criei o script que processa 120x mais rápido múltiplos PDFs automaticamente, mantém formatação original da planilha, calcula fórmulas automáticas e eliminou completamente o trabalho manual. Inclui tratamento de erros e interface amigável com arquivo .bat para execução.",
+            description: "Extrai ordens de serviço de PDFs para Excel 120x mais rápido que o processo manual. Desenvolvido em uma semana com pdfplumber e openpyxl.",
             backgroundUrl: "/assets/backend-aplicado-pdf-to-excel.png",
             gifUrl: "",
             videoUrl: "",
@@ -176,17 +160,13 @@ const Project = () => {
             gitHubLink: "https://github.com/JGabrielFBeserra/PDF-to-Excel-Automation",
         },
         {
-            id: 10,
-            title: "GLPI Card Export - Extensão Chrome",
+            id: 11,
+            title: "GLPI Card Export",
             date: "01/2025",
             type: "Aplicados",
             tech: "Frontend",
-            technologies: ["JavaScript", "Chrome Extension", "HTML2Canvas", "jsPDF", "PDF.js"],
-            skills: ["JavaScript", "Chrome API", "DOM", "PDF", "Automação"],
-            situacao: "Analistas de TI perdiam horas extraindo evidências manualmente de chamados GLPI, usando print screen, Word e exportação para PDF em processo demorado e propenso a erros.",
-            tarefa: "Desenvolver extensão Chrome para automatizar completamente a geração de PDFs com evidências de chamados GLPI, eliminando processo manual e padronizando documentação.",
-            acao: "Criei extensão usando JavaScript puro, Chrome APIs, HTML2Canvas para captura de tela, jsPDF para geração de PDF e PDF.js para processamento de anexos. Implementei interface visual para seleção de cards, detecção automática de tipos de chamado (KCOR/TECSIDEL) e organização cronológica.",
-            resultados: "Extensão que reduziu 80% do tempo de documentação, eliminou erros de formatação manual, padronizou documentos automaticamente e aumentou significativamente a produtividade da equipe de TI.",
+            skills: ["JavaScript", "Chrome API", "DOM", "PDF"],
+            description: "Extensão Chrome que gera PDFs com evidências de chamados GLPI, reduzindo 80% do tempo de documentação da equipe de TI.",
             backgroundUrl: "/assets/backend-aplicado-glpi-card.png",
             gifUrl: "",
             videoUrl: "",
@@ -194,17 +174,13 @@ const Project = () => {
             gitHubLink: "https://github.com/JGabrielFBeserra/glpi-.card-body-downloader",
         },
         {
-            id: 11,
+            id: 12,
             title: "Avaliador de Hackathon",
             date: "",
             type: "Aplicados",
             tech: "Full Stack",
-            technologies: ["PHP", "WordPress", "MySQL", "Plugin Development"],
-            skills: ["PHP", "Wordpress", "Plugin próprio", "HostGator", "MySQL"],
-            situacao: "Durante hackathon, era necessário um sistema para avaliadores pontuarem projetos de forma organizada e transparente.",
-            tarefa: "Desenvolver plugin WordPress personalizado para permitir avaliação estruturada de projetos de hackathon com diferentes critérios.",
-            acao: "Eu e outra colega desenvolvemos o plugin WordPress em PHP com sistema de avaliação customizado, banco de dados para armazenar pontuações e interface administrativa.",
-            resultados: "Plugin funcional que organizou processo de avaliação do hackathon, proporcionando transparência e facilidade para avaliadores e organizadores.",
+            skills: ["PHP", "WordPress", "MySQL", "Plugin"],
+            description: "Plugin WordPress desenvolvido em dupla para avaliação estruturada de projetos durante hackathon, com critérios customizados e interface administrativa.",
             backgroundUrl: "/assets/full-stack-aplicado-hack.png",
             gifUrl: "",
             videoUrl: "",
@@ -212,17 +188,13 @@ const Project = () => {
             gitHubLink: "",
         },
         {
-            id: 12,
+            id: 13,
             title: "Fatura Extractor Automation",
             date: "07/2025",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "pdfplumber", "PyPDF2", "openpyxl", "tkinter"],
             skills: ["Python", "PDF", "Automação", "Excel", "OCR"],
-            situacao: "Empresa processava manualmente centenas de faturas de energia elétrica mensais, extraindo dados para planilhas, separando canhotos e renomeando arquivos - processo extremamente demorado e propenso a erros.",
-            tarefa: "Desenvolver sistema de automação completo para extrair dados de faturas PDF, preencher planilhas automaticamente, separar canhotos individuais e renomear arquivos baseado no conteúdo lido.",
-            acao: "Estou desenvolvendo em Python usando pdfplumber para extração de texto, PyPDF2 para separação de páginas, openpyxl para manipulação de planilhas. O projeto ainda está em construção, mas já implementei detecção de múltiplas empresas (CEDRAP, ELEKTRO, EDP) e módulos funcionais para extração e separação.",
-            resultados: "Projeto em desenvolvimento com módulos principais definidos: extração inteligente de dados por empresa, separação automática de canhotos, preenchimento de planilhas Excel e sistema de renomeação baseado em OCR. Quando finalizado, eliminará completamente o trabalho manual de processamento de faturas.",
+            description: "Extrai dados de centenas de faturas de energia mensais, separando canhotos e renomeando arquivos. Suporta CEDRAP, ELEKTRO e EDP.",
             backgroundUrl: "/assets/backend-aplicado-faturas.png",
             gifUrl: "",
             videoUrl: "",
@@ -230,54 +202,41 @@ const Project = () => {
             gitHubLink: "https://github.com/JGabrielFBeserra/fatura-extractor-automation",
         },
         {
-            id: 13,
-            title: "Automação de PDFs para Planilhas com Python e Pandas",
+            id: 14,
+            title: "Automação PDFs → Planilhas com Pandas",
             date: "08/2025",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "pdfplumber", "Pandas", "BBox", "RPA"],
-            skills: ["Python", "PDF", "Pandas", "Excel", "RPA"],
-            situacao: "Um colaborador precisava extrair dados de um grande volume de PDFs e organizá-los em uma planilha estruturada. Diante da minha proficiência em Python, ele me procurou solicitando uma solução automatizada para esse processo.",
-            tarefa: "Desenvolver um sistema de automação para leitura de faturas em PDF, extração das colunas principais (Matrículas e Nomes), preenchimento automático de planilha.",
-            acao: "Implementei um script em Python utilizando as bibliotecas `pdfplumber` para leitura de PDFs e `pandas` para tratamento e exportação dos dados. A automação incluiu leitura por coordenadas (BBox), garantindo precisão na extração de colunas específicas.",
-            resultados: "O script foi desenvolvido e entregue no mesmo dia, resultando em uma planilha com os dados organizados e validados. O colaborador ficou altamente satisfeito com a automação, e o projeto me proporcionou domínio prático em leitura estruturada de PDFs e manipulação de dados com Pandas.",
+            skills: ["Python", "Pandas", "PDF", "Excel", "RPA"],
+            description: "Entregue no mesmo dia da solicitação: extrai colunas de PDFs por coordenadas BBox e exporta planilha estruturada com Pandas.",
             backgroundUrl: "/assets/backend-aplicado-pdf.png",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
-            gitHubLink: "https://github.com/JGabrielFBeserra/pdf-to-excel-pandas"
-        },
-        {
-
-            "id": 14,
-            "title": "Extensão Chrome para Download Automático de Anexos",
-            "date": "08/2025",
-            "type": "Aplicados",
-            "tech": "Frontend",
-            "technologies": ["JavaScript", "Chrome APIs", "HTML", "CSS"],
-            "skills": ["JavaScript", "Extensão Chrome", "Automação", "UX"],
-            "situacao": "Após a migração dos processos do setor de Contas a Pagar para o GLPI, os colaboradores enfrentavam perda de tempo ao baixar manualmente anexos de chamados (PDFs, planilhas e imagens), precisando abrir cada arquivo e salvá-lo individualmente.",
-            "tarefa": "Criar uma extensão para o Google Chrome que automatizasse o download de múltiplos anexos diretamente dos chamados do GLPI, reduzindo cliques manuais e facilitando o arquivamento dos documentos.",
-            "acao": "Implementei uma extensão em JavaScript puro utilizando Chrome APIs, com interface popup interativa para seleção rápida dos anexos. Ao clicar na extensão, o colaborador pode escolher os arquivos desejados e baixá-los de uma só vez, sem precisar abrir cada item individualmente.",
-            "resultados": "A extensão reduziu o tempo médio de arquivamento de contas de 5 minutos para 2 minutos por processo. Considerando uma média de 60 a 70 contas semanais, o ganho foi de aproximadamente 60% de produtividade: economia de ~3 horas semanais, ~12 horas mensais e ~144 horas anuais por colaborador. A solução foi aplicada de forma interna, padronizando o processo e liberando tempo para atividades mais estratégicas.",
-            "backgroundUrl": "/assets/full-backend-aplicado-javascript-glpi.png",
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "",
-            gitHubLink: "https://github.com/JGabrielFBeserra/glpi-pdf-excel-downloader"
+            gitHubLink: "https://github.com/JGabrielFBeserra/pdf-to-excel-pandas",
         },
         {
             id: 15,
+            title: "Download Automático de Anexos GLPI",
+            date: "08/2025",
+            type: "Aplicados",
+            tech: "Frontend",
+            skills: ["JavaScript", "Chrome API", "Automação", "UX"],
+            description: "Extensão para baixar múltiplos anexos de chamados GLPI de uma vez. Economia de ~144 horas anuais por colaborador no setor de Contas a Pagar.",
+            backgroundUrl: "/assets/full-backend-aplicado-javascript-glpi.png",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "https://github.com/JGabrielFBeserra/glpi-pdf-excel-downloader",
+        },
+        {
+            id: 16,
             title: "Exportação de Prévia Diária + Resumo",
             date: "",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "Automação", "RPA"],
             skills: ["Python", "Automação", "RPA", "Backoffice"],
-            situacao: "No Centro de Controle de Arrecadação (CCA), a equipe realizava manualmente a exportação e consolidação da prévia diária de dados, consumindo tempo produtivo dos colaboradores em um fluxo repetitivo e suscetível a erros.",
-            tarefa: "Automatizar o fluxo completo de exportação da prévia diária e geração do resumo, eliminando o trabalho manual do backoffice.",
-            acao: "Desenvolvi um script Python que automatiza todo o processo de exportação e consolidação dos dados diários, substituindo o fluxo manual por uma entrega automatizada e padronizada.",
-            resultados: "Automação entregue com sucesso para o CCA, eliminando horas de trabalho manual recorrente. Junto às demais automações do setor, contribuiu para uma economia de 48 horas anuais por colaborador.",
+            description: "Automação da exportação e consolidação da prévia diária no CCA. Parte de um pacote que economiza 48 horas anuais por colaborador.",
             backgroundUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
@@ -285,38 +244,14 @@ const Project = () => {
             gitHubLink: "",
         },
         {
-            id: 16,
+            id: 17,
             title: "Exportação Volume Pedagiado",
             date: "",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "Automação", "RPA"],
             skills: ["Python", "Automação", "RPA", "Backoffice"],
-            situacao: "A extração do volume pedagiado era feita manualmente pela equipe do CCA, demandando atenção constante e gerando retrabalho na consolidação dos dados de arrecadação.",
-            tarefa: "Automatizar a exportação dos dados de volume pedagiado, garantindo precisão e agilidade no processo de backoffice.",
-            acao: "Criei um script Python que realiza a extração e exportação automática do volume pedagiado, eliminando intervenção manual e padronizando a saída dos dados.",
-            resultados: "Fluxo manual convertido em entrega automatizada, reduzindo erros e liberando os colaboradores do CCA para atividades mais estratégicas. Parte do conjunto de automações que somam 48 horas anuais economizadas.",
+            description: "Extração e exportação automática do volume pedagiado no CCA, eliminando intervenção manual e padronizando a saída dos dados de arrecadação.",
             backgroundUrl: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
-
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "",
-            gitHubLink: "",
-        },
-        {
-            id: 17,
-            title: "Exportação TXT das Evasões",
-            date: "",
-            type: "Aplicados",
-            tech: "Backend",
-            technologies: ["Python", "Automação", "RPA"],
-            skills: ["Python", "Automação", "RPA", "Backoffice"],
-            situacao: "O registro e exportação das evasões em formato TXT era um processo manual dentro do CCA, exigindo atenção diária e aumentando o risco de inconsistências nos dados.",
-            tarefa: "Desenvolver automação para geração e exportação do arquivo TXT de evasões, eliminando o processo manual do backoffice.",
-            acao: "Implementei script Python que automatiza a leitura, tratamento e exportação das evasões no formato TXT exigido, garantindo padronização e rastreabilidade dos dados.",
-            resultados: "Eliminação do processo manual de exportação, com entregas mais rápidas e sem erros de formatação. Integra o pacote de automações do CCA que economiza 48 horas anuais por colaborador.",
-            backgroundUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
-
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -324,18 +259,13 @@ const Project = () => {
         },
         {
             id: 18,
-            title: "Exportação Fechamento Mensal",
+            title: "Exportação TXT das Evasões",
             date: "",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "Automação", "RPA"],
             skills: ["Python", "Automação", "RPA", "Backoffice"],
-            situacao: "O fechamento mensal do CCA envolvia exportações manuais de múltiplos dados, tornando o processo moroso e crítico por acontecer em janelas de tempo restritas.",
-            tarefa: "Automatizar o fluxo de exportação do fechamento mensal, garantindo que todos os dados sejam extraídos corretamente dentro do prazo.",
-            acao: "Desenvolvi script Python que executa automaticamente todas as etapas de exportação necessárias para o fechamento mensal, consolidando os dados de forma estruturada e confiável.",
-            resultados: "Fechamento mensal executado de forma automatizada, eliminando o risco de atrasos e erros manuais. Parte do conjunto de automações do CCA que somam 48 horas anuais economizadas por colaborador.",
-            backgroundUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
-
+            description: "Geração e exportação automática do arquivo TXT de evasões no CCA, garantindo padronização e rastreabilidade sem intervenção manual diária.",
+            backgroundUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -343,18 +273,13 @@ const Project = () => {
         },
         {
             id: 19,
-            title: "Automatização de Criação de Pastas",
+            title: "Exportação Fechamento Mensal",
             date: "",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "Automação", "RPA", "OS"],
             skills: ["Python", "Automação", "RPA", "Backoffice"],
-            situacao: "No CCA, a criação manual de estruturas de pastas para organização dos arquivos do backoffice era uma tarefa repetitiva realizada periodicamente, consumindo tempo e sujeita a inconsistências de nomenclatura.",
-            tarefa: "Automatizar a criação padronizada de estruturas de pastas, eliminando o trabalho manual e garantindo consistência na organização dos arquivos.",
-            acao: "Criei script Python utilizando a biblioteca OS para geração automática de estruturas de pastas conforme padrão definido, com nomes dinâmicos baseados em datas e parâmetros do processo.",
-            resultados: "Criação de pastas padronizada e instantânea, eliminando erros de nomenclatura e retrabalho. Compõe o pacote de automações do CCA que juntas economizam 48 horas anuais por colaborador.",
-            backgroundUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
-
+            description: "Executa automaticamente todas as exportações do fechamento mensal do CCA, eliminando risco de atrasos em janelas de tempo restritas.",
+            backgroundUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -362,18 +287,13 @@ const Project = () => {
         },
         {
             id: 20,
-            title: "Extração de Dados de NFs com OCR e IA",
+            title: "Automatização de Criação de Pastas",
             date: "",
             type: "Aplicados",
             tech: "Backend",
-            technologies: ["Python", "OCR", "IA", "PDF", "Automação"],
-            skills: ["Python", "OCR", "IA", "PDF", "Automação", "RPA"],
-            situacao: "O setor financeiro realizava manualmente a leitura e extração de dados de Notas Fiscais em PDF para alimentar planilhas, processo lento, repetitivo e propenso a erros humanos.",
-            tarefa: "Automatizar a extração de dados de NFs utilizando OCR e inteligência artificial, eliminando a digitação manual e acelerando o fluxo do setor financeiro.",
-            acao: "Desenvolvi solução em Python com OCR e IA para leitura inteligente de NFs em PDF, identificando e extraindo automaticamente os campos relevantes para alimentar as planilhas do setor.",
-            resultados: "Extração automatizada de NFs, eliminando trabalho manual e erros de digitação. Parte do conjunto de automações do setor financeiro que economiza mais de 120 horas anuais para os colaboradores.",
-            backgroundUrl: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
-
+            skills: ["Python", "Automação", "RPA", "OS"],
+            description: "Gera estruturas de pastas padronizadas com nomes dinâmicos baseados em datas, eliminando inconsistências de nomenclatura no CCA.",
+            backgroundUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -381,18 +301,13 @@ const Project = () => {
         },
         {
             id: 21,
-            title: "Extensão Google de Download Renomeado",
+            title: "Extração de NFs com OCR e IA",
             date: "",
             type: "Aplicados",
-            tech: "Frontend",
-            technologies: ["JavaScript", "Chrome APIs", "HTML", "CSS", "Automação"],
-            skills: ["JavaScript", "Chrome API", "Automação", "UX", "DOM"],
-            situacao: "No setor financeiro, colaboradores perdiam tempo renomeando manualmente arquivos baixados de PDFs e planilhas, precisando seguir uma nomenclatura padrão para arquivamento correto dos documentos.",
-            tarefa: "Criar extensão Chrome que automatizasse o download já com o nome padronizado, eliminando a etapa manual de renomeação de arquivos do setor financeiro.",
-            acao: "Desenvolvi extensão em JavaScript puro utilizando Chrome APIs para interceptar downloads e aplicar automaticamente a nomenclatura padrão definida pelo setor, com interface simples e intuitiva.",
-            resultados: "Eliminação completa da etapa de renomeação manual, padronizando os arquivos automaticamente no download. Integra o pacote de automações do financeiro que somam mais de 120 horas anuais economizadas.",
-            backgroundUrl: "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?w=800&q=80",
-
+            tech: "Backend",
+            skills: ["Python", "OCR", "IA", "PDF", "RPA"],
+            description: "Leitura inteligente de Notas Fiscais em PDF com OCR e IA, extraindo automaticamente os campos relevantes. Parte do pacote que economiza +120 horas anuais no financeiro.",
+            backgroundUrl: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -400,18 +315,13 @@ const Project = () => {
         },
         {
             id: 22,
-            title: "Extração de Ordens de Serviço para .xlsx",
+            title: "Download com Renomeação Automática",
             date: "",
             type: "Aplicados",
-            tech: "Backend",
-            technologies: ["Python", "pdfplumber", "openpyxl", "Automação", "RPA"],
-            skills: ["Python", "PDF", "Excel", "Automação", "RPA"],
-            situacao: "O setor financeiro extraía manualmente dados de Ordens de Serviço em PDF para planilhas Excel, processo que demandava horas de trabalho repetitivo e gerava inconsistências nos registros.",
-            tarefa: "Automatizar a extração e estruturação dos dados das Ordens de Serviço de PDFs diretamente para planilhas .xlsx, mantendo o padrão de formatação exigido pelo setor.",
-            acao: "Desenvolvi script Python com pdfplumber para extração dos dados e openpyxl para escrita estruturada no Excel, preservando formatações e aplicando fórmulas automáticas conforme o padrão do setor financeiro.",
-            resultados: "Extração automatizada e precisa das OSs, eliminando trabalho manual e erros. Compõe o conjunto de automações do financeiro que economiza mais de 120 horas anuais para os colaboradores.",
-            backgroundUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80",
-
+            tech: "Frontend",
+            skills: ["JavaScript", "Chrome API", "Automação", "DOM"],
+            description: "Extensão Chrome que intercepta downloads e aplica nomenclatura padrão do financeiro automaticamente, eliminando a etapa manual de renomeação.",
+            backgroundUrl: "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -419,18 +329,13 @@ const Project = () => {
         },
         {
             id: 23,
-            title: "Sistema de Mercado Interno — Totem + Portal + Dashboard",
+            title: "Extração de OSs para .xlsx",
             date: "",
             type: "Aplicados",
-            tech: "Full Stack",
-            technologies: ["Java 17", "Spring Boot", "Spring Security", "JWT", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Docker"],
-            skills: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker", "JWT", "Tailwind CSS", "Arquitetura em Camadas"],
-            situacao: "O mercado interno da Concessionária Tamoios operava via formulários manuais, planilhas e e-mail corporativo — um processo excludente (nem todos os colaboradores têm e-mail) e que gerava enorme retrabalho de conferência para a gestão.",
-            tarefa: "Desenvolver um ecossistema completo de gestão para o mercado interno, cobrindo o autoatendimento dos colaboradores, transparência de histórico e controle total para a equipe administrativa.",
-            acao: "Em atuação conjunta com a equipe administrativa para mapeamento de processos e regras de negócio, desenvolvi três módulos: Totem de autoatendimento estilo McDonalds (inclusivo, sem necessidade de e-mail corporativo), Portal do Colaborador com histórico e gastos individuais, e Dashboard de Gestão com controle de estoque, usuários, vendas e relatórios em tempo real. Stack: Java 17 + Spring Boot com Spring Security JWT no backend, React + TypeScript + Tailwind CSS no frontend, PostgreSQL 15 e ambiente 100% conteinerizado com Docker em servidor On-premise.",
-            resultados: "Sistema adotado por mais de 300 colaboradores, economizando 25 horas mensais da equipe administrativa e eliminando falhas de registro. Solução elogiada pelos stakeholders e pelos colaboradores da ponta, transformando um processo manual limitado em um ecossistema digital completo.",
-            backgroundUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-
+            tech: "Backend",
+            skills: ["Python", "PDF", "Excel", "Automação", "RPA"],
+            description: "Extrai dados de Ordens de Serviço em PDF direto para Excel com formatação e fórmulas automáticas conforme padrão do setor financeiro.",
+            backgroundUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -438,18 +343,13 @@ const Project = () => {
         },
         {
             id: 24,
-            title: "Dataset para Monitoramento de Fauna com Visão Computacional e Deep Learning",
-            date: "2025",
+            title: "Automação Resumos e Fechamento CCA",
+            date: "05/2026",
             type: "Aplicados",
-            tech: "ML",
-            technologies: ["Python", "YOLO", "Deep Learning", "Visão Computacional", "OpenCV", "Dataset Annotation", "bounding boxes", "mAP"],
-            skills: ["Python", "Deep Learning", "YOLO", "Visão Computacional", "Anotação de Dados", "Curadoria de Dataset", "Machine Learning"],
-            situacao: "A Concessionária Tamoios monitorava passagens de fauna na Serra do Mar (gambás, lagartos, pacas, tamanduás) com câmeras IP de última geração, porém a alta sensibilidade do hardware gerava enorme volume de falsos positivos por variações de iluminação, vegetação e espécies fora do escopo. A curadoria manual por especialistas era onerosa, pouco escalável e incompatível com a demanda contínua. Fui selecionado como pesquisador discente no Acordo de Parceria PD&I entre o IFSP-CAR (CEPIN-CIS) e a Concessionária Tamoios para resolver esse problema.",
-            tarefa: "Construir, estruturar e validar um dataset para monitoramento automatizado de fauna em infraestrutura rodoviária, utilizando Visão Computacional e Deep Learning (YOLO), substituindo a triagem manual por um mecanismo inteligente e automatizado de detecção e classificação de espécies silvestres.",
-            acao: "Realizei a coleta e organização de imagens e vídeos das câmeras instaladas nas passagens de fauna em diferentes condições ambientais. Estruturei o dataset com definição de classes de interesse, padronização de formatos e critérios de qualidade. Executei a anotação dos dados com bounding boxes e realizei curadoria para identificar inconsistências e balancear classes. Treinei e avaliei modelos YOLO para validar a qualidade do dataset, executando ciclos iterativos de melhoria contínua com base em métricas como precisão, recall, mAP e taxa de falsos positivos.",
-            resultados: "Projeto de pesquisa aplicada em andamento, desenvolvido em parceria institucional entre IFSP-CAR e Concessionária Tamoios. O sistema visa substituir completamente a curadoria manual por triagem automatizada, garantindo maior confiabilidade, padronização e integridade dos dados biológicos coletados na Serra do Mar. Resultados serão publicados em TCC e eventos técnico-científicos.",
-            backgroundUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80",
-
+            tech: "Backend",
+            skills: ["Python", "Pandas", "OpenPyXL", "RPA"],
+            description: "Gera resumos diários individuais e consolida ~30 arquivos mensais em um único fechamento. Eliminou o esforço manual de manipulação de planilhas no CCA.",
+            backgroundUrl: "https://images.unsplash.com/photo-1599658880436-c61792e70672?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -457,18 +357,13 @@ const Project = () => {
         },
         {
             id: 25,
-            title: "Automação de Resumos e Fechamento Mensal (Setor CCA)",
-            date: "mai/2026",
+            title: "Pipeline IQA — Dados Ambientais",
+            date: "05/2026",
             type: "Aplicados",
-            tech: "Python",
-            technologies: ["Python", "Pandas", "OpenPyXL", "Automação de Processos", "Manipulação de Planilhas"],
-            skills: ["Python", "Análise de Dados", "Automação de Tarefas", "RPA", "Otimização de Processos"],
-            situacao: "O setor de CCA lidava com um processo operacional altamente repetitivo: era necessário gerar resumos diários individuais a partir de relatórios brutos extraídos do sistema. Ao final do mês, a equipe precisava agrupar e consolidar cerca de 30 resumos diários manualmente para compor o relatório de fechamento, o que consumia tempo e abria margem para falhas humanas na manipulação das planilhas.",
-            tarefa: "Desenvolver uma rotina automatizada capaz de gerar os resumos diários individuais e, em seguida, consolidar unificadamente esses múltiplos arquivos no relatório final de fechamento mensal do setor.",
-            acao: "Criei scripts em Python focados em manipulação de dados em massa. A solução absorve as extrações diárias, filtra e constrói automaticamente os resumos individuais de cada dia. Na etapa de fechamento, um segundo fluxo do script faz a varredura dos 30 arquivos gerados, unificando os dados e gerando o arquivo consolidado final de forma limpa e estruturada.",
-            resultados: "A automação eliminou completamente o esforço manual de manipulação de planilhas e agrupamento de dados no fechamento mensal do CCA. O processo agora é executado de forma rápida, padronizada e livre de erros, otimizando a rotina do setor.",
-            backgroundUrl: "https://images.unsplash.com/photo-1599658880436-c61792e70672?w=800&q=80",
-
+            tech: "Backend",
+            skills: ["Python", "pdfplumber", "python-docx", "OpenPyXL"],
+            description: "Extrai dados de PDFs do Índice de Qualidade das Águas e exporta para DOCX e Excel automaticamente. Desenvolvido em 8h, economiza 6h de trabalho manual por trimestre.",
+            backgroundUrl: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
@@ -476,30 +371,34 @@ const Project = () => {
         },
         {
             id: 26,
-            title: "Pipeline de Extração de Dados Ambientais (IQA)",
-            date: "mai/2026",
-            type: "Aplicados",
-            tech: "Python",
-            technologies: ["Python", "pdfplumber", "python-docx", "OpenPyXL", "Extração de Dados", "RPA"],
-            skills: ["Python", "Manipulação de PDF", "Automação", "Engenharia de Dados", "Otimização de Tempo"],
-            situacao: "A equipe de Meio Ambiente enfrentava um gargalo trimestral na geração do Índice de Qualidade das Águas (IQA). O processo exigia a leitura manual de documentos em PDF e a transcrição linha a linha desses dados para gerar a documentação oficial em formatos de texto (DOCX) e planilhas (Excel).",
-            tarefa: "Reduzir o trabalho manual de conversão e montagem da documentação, criando uma automação que lesse as linhas dos PDFs e exportasse as informações já estruturadas para Word e Excel.",
-            acao: "Desenvolvi uma solução em Python utilizando a biblioteca `pdfplumber` para fazer a varredura e extração precisa do texto contido nas linhas dos PDFs originais. Após a extração, o script processa as informações e as escreve automaticamente nos templates em formato DOCX e Excel, estruturando os relatórios sem intervenção humana.",
-            resultados: "Projeto concluído e validado. A ferramenta foi desenvolvida em cerca de 8 horas e reduziu o tempo de execução do processo trimestral da equipe, gerando uma economia recorrente de 6 horas de trabalho manual focado apenas em transcrição de dados.",
-            backgroundUrl: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
+            title: "Montador de Lanche — Vue.js",
+            date: "",
+            type: "Estudos",
+            tech: "Frontend",
+            skills: ["Vue", "JavaScript", "Bootstrap"],
+            description: "App Vue.js para montar lanches com preview em tempo real. Criado para aprender reatividade, v-model e computed properties fora do ecossistema React.",
+            backgroundUrl: "/assets/frontend-estudo-vue.png",
             gifUrl: "",
             videoUrl: "",
             siteUrl: "",
-            gitHubLink: "",
-        }
+            gitHubLink: "https://github.com/JGabrielFBeserra/Estudo-de-VueJS",
+        },
+        {
+            id: 27,
+            title: "OnePage Bootstrap — Inglês",
+            date: "05/2024",
+            type: "Estudos",
+            tech: "Frontend",
+            skills: ["Bootstrap", "Responsividade", "HTML", "SCSS"],
+            description: "Site institucional criado como substituto de slides para apresentação de empresa fictícia na disciplina de inglês. Concluído em 3 dias.",
+            backgroundUrl: "/assets/frontend-estudo-bootstrap.png",
+            gifUrl: "",
+            videoUrl: "",
+            siteUrl: "",
+            gitHubLink: "https://github.com/JGabrielFBeserra/OnePage-Bootstrap",
+        },
     ];
 
-    // Filtrar projetos
-    const filteredProjects = projects.filter(project => {
-        const typeMatch = activeTypeFilter === 'Todos' || project.type === activeTypeFilter;
-        const techMatch = activeTechFilter === 'Todos' || project.tech === activeTechFilter;
-        return typeMatch && techMatch;
-    });
 
     function getEmbedUrl(videoUrl) {
         if (videoUrl.includes("youtu.be")) { //verifica se é um link curto do youtube
@@ -518,119 +417,13 @@ const Project = () => {
 
 
     return (
-        <section className="project section" id="projetos">
-            <h2 className="section__title">Projetos</h2>
-            <span className="section__subtitle">Projetos/Estudos mais recentes.</span>
-
-            <div className="project__container container grid">
-                <div className="project__header">
-                    <div className="project__type-project">
-                        {['Aplicados', 'Todos', 'Estudos'].map(type => (
-                            <button
-                                key={type}
-                                className={`project__filter-btn ${activeTypeFilter === type ? 'button button--flex' : 'project__filter-btn--inactive '}`}
-                                onClick={() => setActiveTypeFilter(type)}
-                            >
-                                {type}
-                            </button>
-                        ))}
-                    </div>
-                    <hr />
-                    <div className="project__type-tecnology">
-                        {['Todos', 'Full Stack', 'Backend', 'Frontend', 'ML'].map(tech => (
-                            <button
-                                key={tech}
-                                className={`project__filter-btn ${activeTechFilter === tech ? 'button button--flex' : 'project__filter-btn--inactive'}`}
-                                onClick={() => setActiveTechFilter(tech)}
-                            >
-                                {tech}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-                <div className="project__content" >
-
-                    {filteredProjects.map(project => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                            onClick={() => setSelectedProject(project)}
-                        />
-                    ))}
-                </div>
-                {selectedProject && (
-                    <div className="project__modal-overlay" onClick={() => setSelectedProject(null)}>
-                        <div className="project__modal" onClick={(e) => e.stopPropagation()}>
-                            <button className="project__modal-close" onClick={() => setSelectedProject(null)}>
-                                <i className="uil uil-times"></i>
-                            </button>
-
-                            <div className="project__modal-content">
-                                <h2 className="project__modal-title">{selectedProject.title}</h2>
-                                <h2 className="project__modal-subtitle">{selectedProject.date}</h2>
-                                <p className="project__modal-star"><strong className="project__star-letter">S</strong><span className="project__star-title">ituação:</span> {selectedProject.situacao}</p>
-                                <p className="project__modal-star"><strong className="project__star-letter">T</strong><span className="project__star-title">arefa:</span> {selectedProject.tarefa}</p>
-                                <p className="project__modal-star"><strong className="project__star-letter">A</strong><span className="project__star-title">ção:</span> {selectedProject.acao}</p>
-                                <p className="project__modal-star"><strong className="project__star-letter">R</strong><span className="project__star-title">esultados:</span> {selectedProject.resultados}</p>
-
-                                <div className="project__tech-list">
-                                    {selectedProject.skills.map((tech, index) => (
-                                        <span key={index} className="project__tech-item">{tech}</span>
-                                    ))}
-                                </div>
-                                <br />
-                                {selectedProject.gitHubLink && (
-                                    <div className="project__modal-center">
-                                        <a
-                                            href={selectedProject.gitHubLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="project__modal-link project__modal-link--live"
-                                        >
-                                            Ver no GitHub
-                                        </a>
-                                    </div>
-                                )}
-
-                                <hr></hr>
-                                <br />
-                                {selectedProject.videoUrl && (
-                                    <div className="project__video-container">
-                                        <div className="project__modal-links">
-                                            <div className="project__modal-center">
-                                                {selectedProject.siteUrl && (
-                                                    <a
-                                                        href={selectedProject.siteUrl}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="project__modal-link project__modal-link--live"
-                                                    >
-                                                        <FaGithub className="project__link-icon" />
-                                                        Ver Projeto ao vivo
-                                                        <IoLogoVercel className="project__link-icon" />
-                                                    </a>
-                                                )}
-                                            </div>
-
-                                        </div>
-                                        <iframe
-                                            className="project__video"
-                                            src={getEmbedUrl(selectedProject.videoUrl)}
-                                            title="YouTube video player"
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerPolicy="strict-origin-when-cross-origin"
-                                            allowFullScreen
-                                        />
-                                    </div>
-
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                )}
+        <div className="project__container container">
+            <div className="project__content" >
+                <MosaicProject projects={projects} />
             </div>
-        </section >
+
+        </div>
+
     );
 }
 

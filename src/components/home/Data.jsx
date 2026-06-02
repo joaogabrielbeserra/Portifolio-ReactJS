@@ -57,9 +57,6 @@ const Data = () => {
             
 
             <h3 className="home__subtitle">Desenvolvedor Full Stack</h3>
-            <p className="home__description">
-                Gosto do novo, amo programar e sou movido por boas propostas.
-            </p>
             <a href="#contato" className="button button--flex" style={{ fontWeight: "var(--font-semi-bold)" }}>
                     Entre em contato
                     <svg
