@@ -176,7 +176,7 @@
 
 @media screen and (max-width: 576px) {
     .cert-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 8px;
     }
 
