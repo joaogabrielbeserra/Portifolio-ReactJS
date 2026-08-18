@@ -121,19 +121,19 @@ img {
 
 /* reutilização das classes css */
 .section {
-    padding: 6rem 0 2rem;
+    padding: 3.5rem 0 1.5rem;
 }
 
 .section__title {
     font-size: var(--h1-font-size);
     color: var(--cor-titulo);
-   
+
 }
 
 .section__subtitle{
     display: block;
     font-size: var(--peq-font-size);
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .section__title, .section__subtitle {
