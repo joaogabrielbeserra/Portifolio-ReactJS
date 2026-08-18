@@ -14,10 +14,10 @@ const Database = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <GrMysql className="skills__icon" /> MySQL - &nbsp; <p className="skills__subtitle">Proficiente</p>
+                                <GrMysql className="skills__icon" /> MySQL <p className="skills__subtitle">Proficiente</p>
                             </h3>
                             <span className="skills__level">
-                                Principal banco, utilizado em todos os projetos acadêmicos e profissionais.
+                                Banco principal em projetos reais.
                             </span>
                         </div>
                     </div>
@@ -25,10 +25,10 @@ const Database = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <SiPostgresql className="skills__icon" /> PostgreSQL - &nbsp; <p className="skills__subtitle">Intermediário</p>
+                                <SiPostgresql className="skills__icon" /> PostgreSQL <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
-                                Utilizado em projetos com Docker e ambiente On-premise.
+                                Projetos com Docker e On-premise.
                             </span>
                         </div>
                     </div>
@@ -36,10 +36,10 @@ const Database = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <SiPrisma className="skills__icon" /> Prisma - &nbsp; <p className="skills__subtitle">Intermediário</p>
+                                <SiPrisma className="skills__icon" /> Prisma <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
-                                ORM utilizado com Node.js em projetos full-stack.
+                                ORM com Node.js em projetos full-stack.
                             </span>
                         </div>
                     </div>
@@ -47,10 +47,10 @@ const Database = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <SiMongodb className="skills__icon" /> MongoDB - &nbsp; <p className="skills__subtitle">Básico</p>
+                                <SiMongodb className="skills__icon" /> MongoDB <p className="skills__subtitle">Básico</p>
                             </h3>
                             <span className="skills__level">
-                                Banco não relacional, estudei em uma mate'ria na faculdade.
+                                Banco não relacional, uso acadêmico.
                             </span>
                         </div>
                     </div>

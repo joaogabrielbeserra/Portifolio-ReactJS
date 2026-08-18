@@ -12,7 +12,7 @@ const certifications = [
         id: 1,
         title: "Formação Java",
         description: "Back-end com Java moderno, APIs REST e ecossistema Spring.",
-        institution: "Rocketseat",
+        institution: "Rocket",
         date: "out/2025",
         tags: ["Java", "Spring Boot", "JPA", "Hibernate", "APIs REST"],
         link: "https://app.rocketseat.com.br/certificates/70c459b8-7580-4c1d-9db2-fc1fff6c22c9",
@@ -23,16 +23,16 @@ const certifications = [
         id: 2,
         title: "AWS Cloud Architecting",
         description: "Arquitetura de soluções escaláveis e seguras na nuvem AWS.",
-        institution: "Amazon Web Services",
+        institution: "AWS",
         date: "dez/2025",
-        tags: ["Amazon S3", "CloudFront", "Arquitetura Cloud"],
+        tags: ["CloudFront", "Cloud Compute"],
         link: "https://www.credly.com/badges/a1d78fe6-2ea3-40eb-b328-c9097f68e288/linked_in_profile",
         Icon: FaAws,
         InstitutionIcon: FaAws,
     },
     {
         id: 3,
-        title: "Oracle Cloud Foundations Associate",
+        title: "OCI Foundations Associate",
         description: "Fundamentos de infraestrutura na Oracle Cloud.",
         institution: "Oracle",
         date: "mai/2026",
@@ -95,17 +95,27 @@ const certifications = [
         link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
         Icon: FaTrophy,
         InstitutionIcon: PiCertificateBold,
-        highlight: true,
+    },
+    {
+        id: 9,
+        title: "Vencedor Hackathon IFSP 2026",
+        description: "Desafio da SEDUC Caraguatatuba resolvido em 30h com o projeto Zela+.",
+        institution: "IFSP",
+        date: "2026",
+        tags: ["Trabalho em equipe", "Inovação"],
+        link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
+        Icon: FaTrophy,
+        InstitutionIcon: PiCertificateBold,
     },
 ];
 
 const Certification = () => {
     return (
         <div className="cert-wrap">
-            <h3 className="cert-heading">Certificações</h3>
+            <h3 className="cert-heading">Certificações e Conquistas</h3>
 
             <div className="cert-grid">
-                {certifications.map(({ id, description, institution, date, tags, link, Icon, InstitutionIcon, highlight }) => (
+                {certifications.map(({ id, title, institution, date, tags, link, Icon, InstitutionIcon, highlight }) => (
                     <a
                         key={id}
                         href={link}
@@ -113,26 +123,20 @@ const Certification = () => {
                         rel="noopener noreferrer"
                         className={`cert-card${highlight ? " cert-card--highlight" : ""}`}
                     >
-                        <div className="cert-card__top">
-                            <div className="cert-card__icon">
-                                <Icon />
-                            </div>
-                            <div className="cert-card__meta">
-                                <span className="cert-card__institution">
-                                    <InstitutionIcon className="cert-card__inst-icon" />
-                                    {institution}
-                                </span>
-                                <span className="cert-card__date">{date}</span>
-                            </div>
+                        <div className="cert-card__icon">
+                            <Icon />
                         </div>
 
-                    
-                        {description && (
-                            <p className="cert-card__description">{description}</p>
-                        )}
+                        <h4 className="cert-card__title">{title}</h4>
+
+                        <span className="cert-card__institution">
+                            <InstitutionIcon className="cert-card__inst-icon" />
+                            {institution}
+                            <span className="cert-card__date">· {date}</span>
+                        </span>
 
                         <div className="cert-card__tags">
-                            {tags.map((t, i) => (
+                            {tags.slice(0, 3).map((t, i) => (
                                 <span key={i} className="cert-card__tag">{t}</span>
                             ))}
                         </div>

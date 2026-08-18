@@ -1,30 +1,77 @@
-import React, { useState, useEffect } from "react";
-import { FaGithub } from "react-icons/fa";
-import { IoLogoVercel } from "react-icons/io5";
-import ProjectCard from "./ProjectCard";
+import React from "react";
 import MosaicProject from "./MosaicProject";
 
 import './project.css';
 
 const Project = () => {
-    // Estados para os filtros
-    const [activeTypeFilter, setActiveTypeFilter] = useState('Todos');
-    const [activeTechFilter, setActiveTechFilter] = useState('Todos');
-    const [selectedProject, setSelectedProject] = useState(null);
-
     // Dados dos projetos
     const projects = [
         {
             id: 1,
-            title: "Sistema de Mercado Interno",
+            title: "Mercado Interno — Concessionária Tamoios",
             date: "",
-            skills: ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker", "JWT", "Tailwind CSS"],
-            shortDescription: "Ecossistema integrado com totem, portal do colaborador e dashboard administrativo para mais de 300 colaboradores.",
-            description: "Ecossistema completo para o mercado interno da Concessionária Tamoios: totem de autoatendimento estilo McDonalds, portal do colaborador e dashboard administrativo. Adotado por mais de 300 colaboradores, economizando 25 horas mensais da equipe de gestão.",
-            backgroundUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+            slug: "sistema-mercado-interno",
+            skills: ["Java", "Spring Boot", "React", "TypeScript", "Vite", "TailwindCSS", "PostgreSQL", "Docker", "JWT"],
+            shortDescription: "Plataforma com 3 frontends integrados: totem, portal do colaborador e dashboard administrativo.",
+            description: "Plataforma com 3 frontends integrados, compartilhando a mesma base de dados e API, cada um voltado a um perfil de usuário distinto: totem de autoatendimento touchscreen para uso rápido no ponto físico, portal do colaborador com histórico de compras e consumo, e dashboard administrativo com visão de vendas, estoque e relatórios. Backend em Spring Boot com arquitetura em camadas e Clean Code, autenticação JWT e APIs REST documentadas; frontend em React + TypeScript com Vite, TailwindCSS, shadcn/ui, React Query e React Hook Form + Zod. Deploy interno containerizado com Docker. Adotado por mais de 350 colaboradores, gerando economia de 25 horas mensais para a equipe de gestão, com mais de 10 mil compras registradas.",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
+            id: 100,
+            title: "Zela+ — Manutenção Escolar Municipal",
+            date: "",
+            slug: "zela-mais",
+            skills: ["Node.js", "Express", "Prisma", "MySQL", "JWT", "React", "Vite", "Tailwind CSS", "Leaflet"],
+            shortDescription: "Sistema de manutenção escolar municipal com RBAC e mapa de calor georreferenciado. Vencedor do Hackathon IFSP 2026.",
+            description: "Sistema de acompanhamento de manutenção escolar do município de Caraguatatuba: escolas registram ocorrências, a SEDUC acompanha as demandas e uma página pública exibe indicadores para a comunidade. Controle de acesso por papel (RBAC) com três perfis: SEDUC, Diretor e Externo. Backend em Node.js/Express com Prisma e MySQL, autenticação JWT, upload de imagens com Multer e validação com Zod. Mapa de calor georreferenciado com Leaflet e GeoJSON dos bairros do município para visualização espacial das ocorrências. Projeto vencedor do Hackathon IFSP 2026.",
+            gifUrl: "",
+            siteUrl: "",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
+            id: 101,
+            title: "Jeep Clube Tamoios — Gestão de Clube Off-Road",
+            date: "",
+            slug: "jeep-clube-tamoios",
+            skills: ["Java", "Spring Boot", "Spring Security", "JWT", "JPA", "MySQL", "Next.js", "React", "TypeScript"],
+            shortDescription: "API REST + portal web para gestão de associados, mensalidades, eventos e carteirinha digital.",
+            description: "Sistema completo (API REST + portal web) para gestão de um clube off-road: cadastro de associados, dependentes e veículos, cobrança de mensalidades, gerenciamento de eventos e emissão de carteirinha digital. Backend em arquitetura hexagonal (Ports & Adapters), modularizado por domínio (authentication, authorization, billing, memberships, vehicles, dependents); frontend em Next.js (App Router) e TypeScript consumindo a API. Autenticação JWT ponta a ponta e autorização por papéis e permissões dinâmicas (RBAC). Suíte de testes no backend com JUnit 5, Mockito, MockMvc e Spring REST Docs, documentação via OpenAPI/Swagger, cobertura via JaCoCo e testes de mutação com PIT.",
+            gifUrl: "",
+            siteUrl: "",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
+            id: 102,
+            title: "LastroNews — Portal de Notícias Regional",
+            date: "",
+            slug: "lastronews",
+            skills: ["Node.js", "Express", "Prisma", "PostgreSQL", "JWT", "React", "Vite", "TailwindCSS"],
+            shortDescription: "Portal de notícias do Litoral Norte de SP com fluxo editorial completo e RBAC granular.",
+            description: "Portal de notícias do Litoral Norte de São Paulo, com fluxo editorial completo (rascunho, revisão e publicação) e conteúdo segmentado por cidade e editoria. Controle de acesso RBAC granular, com perfis de leitor, colunista, anunciante e Admin, cada um com permissões configuráveis. Backend em Node.js/Express com Prisma e PostgreSQL (Supabase) e autenticação JWT. Upload de imagens via Multer integrado ao Supabase Storage, com segmentação de matérias por cidade e geolocalização.",
+            gifUrl: "",
+            siteUrl: "https://www.lastronews.com.br/",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
+            id: 4,
+            title: "BioDex — Parque Natural Juqueriquerê",
+            date: "jan–jun 2024",
+            slug: "biodex",
+            skills: ["Node.js", "Express", "Prisma", "PostgreSQL", "JWT", "React", "React Native", "Expo", "Socket.io"],
+            shortDescription: "Totens digitais, app mobile gamificado e painel administrativo para educação ambiental.",
+            description: "Plataforma com 3 frontends integrados para registro de visitas ao Parque Natural Municipal Juqueriquerê, promovendo educação ambiental e conscientização sobre a biodiversidade local: totem de identificação em React com captura via QR code (português e inglês), aplicativo mobile em React Native com experiência gamificada, rankings mensais e desbloqueio de conteúdo sobre a fauna, e painel administrativo React com monitoramento em tempo real, gestão de conteúdo e exportação de dados em Excel e PDF. Backend em Node.js/Express com Prisma e PostgreSQL, autenticação JWT com três perfis de acesso (cliente, admin e totem) e login social via OAuth2 (Google e Facebook); comunicação em tempo real com Socket.io.",
+            gifUrl: "",
+            siteUrl: "https://lnkd.in/gbBcms8D",
             gitHubLink: "",
             size: "large",
         },
@@ -38,7 +85,6 @@ const Project = () => {
             description: "Sistema de transporte público reconstruído do zero após perda do projeto original por falta de versionamento. Inclui gerenciamento de usuários, cartões, motoristas, ônibus e dashboard administrativo.",
             backgroundUrl: "/assets/full-stack-estudo-javascript-mvc2.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/STUP",
             size: "large",
@@ -53,23 +99,7 @@ const Project = () => {
             description: "Pesquisa aplicada em parceria entre IFSP-CAR e Concessionária Tamoios para monitoramento automatizado de fauna na Serra do Mar.",
             backgroundUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
-            gitHubLink: "",
-            size: "large",
-        },
-
-        {
-            id: 4,
-            title: "BioDex — Parque Natural Juqueriquerê",
-            date: "jan–jun 2024",
-            skills: ["Node.js", "React Native", "PostgreSQL", "JWT", "Socket.io", "Expo", "Tamagui"],
-            shortDescription: "Totens digitais, app mobile e gamificação para gestão de visitas e educação ambiental.",
-            description: "Sistema desenvolvido em parceria com prefeitura, incluindo QR Codes, rankings, exportações e dashboard.",
-            backgroundUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-            gifUrl: "",
-            videoUrl: "",
-            siteUrl: "https://lnkd.in/gbBcms8D",
             gitHubLink: "",
             size: "large",
         },
@@ -83,10 +113,9 @@ const Project = () => {
             description: "Sistema acadêmico de controle de frequência com autenticação JWT, CRUD completo e geração de relatórios PDF.",
             backgroundUrl: "/assets/full-stack-estudo-javascript-mvc.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/sistema-controle-ponto",
-            size: "large",
+            size: "normal",
         },
         {
             id: 6,
@@ -98,7 +127,6 @@ const Project = () => {
             description: "Portfólio profissional construído com React e Vite em 2 semanas. Tema claro/escuro, scroll com navegação ativa e layout responsivo com CSS Grid.",
             backgroundUrl: "/assets/frontend-aplicado-react.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "https://jgabrielfbeserra.vercel.app/",
             gitHubLink: "https://github.com/JGabrielFBeserra/Portifolio-ReactJS",
             size: "normal"
@@ -113,7 +141,6 @@ const Project = () => {
             description: "Desafio técnico do Itaú: API REST em Java 21 e Spring Boot que processa transações e calcula estatísticas em tempo real com documentação Swagger.",
             backgroundUrl: "/assets/backend-estudo-java.jpg",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/Estudo-TesteDevJuniorJava-BancoItau",
         },
@@ -127,7 +154,6 @@ const Project = () => {
             description: "One-page para mapear iniciativas de reciclagem com CRUD local em JS puro. Serviu também como prova de proficiência na disciplina de Desenvolvimento Web 1.",
             backgroundUrl: "/assets/frontend-estudo-javascript.png",
             gifUrl: "/assets/frontend-estudo-javascript.gif",
-            videoUrl: "https://youtu.be/-d78wj6wEzM",
             siteUrl: "https://portal-coscientizacao-reciclagem-bo.vercel.app/",
             gitHubLink: "https://github.com/JGabrielFBeserra/Portal-Coscientizacao-Reciclagem-Bootstrap.git",
         },
@@ -141,7 +167,6 @@ const Project = () => {
             description: "Interface transparente que lê códigos de barras diretamente da tela via hotkey e copia para a área de transferência. Eliminou a compra de leitor físico no setor financeiro.",
             backgroundUrl: "/assets/backend-aplicado-barcode.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/print-codigodebarras-automation",
         },
@@ -155,7 +180,6 @@ const Project = () => {
             description: "Extrai ordens de serviço de PDFs para Excel 120x mais rápido que o processo manual. Desenvolvido em uma semana com pdfplumber e openpyxl.",
             backgroundUrl: "/assets/backend-aplicado-pdf-to-excel.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/PDF-to-Excel-Automation",
         },
@@ -169,7 +193,6 @@ const Project = () => {
             description: "Extensão Chrome que gera PDFs com evidências de chamados GLPI, reduzindo 80% do tempo de documentação da equipe de TI.",
             backgroundUrl: "/assets/backend-aplicado-glpi-card.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/glpi-.card-body-downloader",
         },
@@ -183,7 +206,6 @@ const Project = () => {
             description: "Plugin WordPress desenvolvido em dupla para avaliação estruturada de projetos durante hackathon, com critérios customizados e interface administrativa.",
             backgroundUrl: "/assets/full-stack-aplicado-hack.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -197,7 +219,6 @@ const Project = () => {
             description: "Extrai dados de centenas de faturas de energia mensais, separando canhotos e renomeando arquivos. Suporta CEDRAP, ELEKTRO e EDP.",
             backgroundUrl: "/assets/backend-aplicado-faturas.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/fatura-extractor-automation",
         },
@@ -211,7 +232,6 @@ const Project = () => {
             description: "Entregue no mesmo dia da solicitação: extrai colunas de PDFs por coordenadas BBox e exporta planilha estruturada com Pandas.",
             backgroundUrl: "/assets/backend-aplicado-pdf.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/pdf-to-excel-pandas",
         },
@@ -225,7 +245,6 @@ const Project = () => {
             description: "Extensão para baixar múltiplos anexos de chamados GLPI de uma vez. Economia de ~144 horas anuais por colaborador no setor de Contas a Pagar.",
             backgroundUrl: "/assets/full-backend-aplicado-javascript-glpi.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/glpi-pdf-excel-downloader",
         },
@@ -239,7 +258,6 @@ const Project = () => {
             description: "Automação da exportação e consolidação da prévia diária no CCA. Parte de um pacote que economiza 48 horas anuais por colaborador.",
             backgroundUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -253,7 +271,6 @@ const Project = () => {
             description: "Extração e exportação automática do volume pedagiado no CCA, eliminando intervenção manual e padronizando a saída dos dados de arrecadação.",
             backgroundUrl: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -267,7 +284,6 @@ const Project = () => {
             description: "Geração e exportação automática do arquivo TXT de evasões no CCA, garantindo padronização e rastreabilidade sem intervenção manual diária.",
             backgroundUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -281,7 +297,6 @@ const Project = () => {
             description: "Executa automaticamente todas as exportações do fechamento mensal do CCA, eliminando risco de atrasos em janelas de tempo restritas.",
             backgroundUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -295,7 +310,6 @@ const Project = () => {
             description: "Gera estruturas de pastas padronizadas com nomes dinâmicos baseados em datas, eliminando inconsistências de nomenclatura no CCA.",
             backgroundUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -309,7 +323,6 @@ const Project = () => {
             description: "Leitura inteligente de Notas Fiscais em PDF com OCR e IA, extraindo automaticamente os campos relevantes. Parte do pacote que economiza +120 horas anuais no financeiro.",
             backgroundUrl: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -323,7 +336,6 @@ const Project = () => {
             description: "Extensão Chrome que intercepta downloads e aplica nomenclatura padrão do financeiro automaticamente, eliminando a etapa manual de renomeação.",
             backgroundUrl: "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -337,7 +349,6 @@ const Project = () => {
             description: "Extrai dados de Ordens de Serviço em PDF direto para Excel com formatação e fórmulas automáticas conforme padrão do setor financeiro.",
             backgroundUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -351,7 +362,6 @@ const Project = () => {
             description: "Gera resumos diários individuais e consolida ~30 arquivos mensais em um único fechamento. Eliminou o esforço manual de manipulação de planilhas no CCA.",
             backgroundUrl: "https://images.unsplash.com/photo-1599658880436-c61792e70672?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -365,7 +375,6 @@ const Project = () => {
             description: "Extrai dados de PDFs do Índice de Qualidade das Águas e exporta para DOCX e Excel automaticamente. Desenvolvido em 8h, economiza 6h de trabalho manual por trimestre.",
             backgroundUrl: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "",
         },
@@ -379,7 +388,6 @@ const Project = () => {
             description: "App Vue.js para montar lanches com preview em tempo real. Criado para aprender reatividade, v-model e computed properties fora do ecossistema React.",
             backgroundUrl: "/assets/frontend-estudo-vue.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/Estudo-de-VueJS",
         },
@@ -393,28 +401,10 @@ const Project = () => {
             description: "Site institucional criado como substituto de slides para apresentação de empresa fictícia na disciplina de inglês. Concluído em 3 dias.",
             backgroundUrl: "/assets/frontend-estudo-bootstrap.png",
             gifUrl: "",
-            videoUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/OnePage-Bootstrap",
         },
     ];
-
-
-    function getEmbedUrl(videoUrl) {
-        if (videoUrl.includes("youtu.be")) { //verifica se é um link curto do youtube
-            const id = videoUrl.split("/").pop().split("?")[0]; //se for eu uso o split para pegar o id do video
-            return `https://www.youtube.com/embed/${id}`; //retorno com o embed para funcioar no iframe
-        }
-
-        if (videoUrl.includes("watch?v=")) { //verifica se é um link longo do youtube
-            const id = new URL(videoUrl).searchParams.get("v"); //extraio o id do video
-            return `https://www.youtube.com/embed/${id}`; //retorno com o embed para funcioar no iframe
-        }
-
-        return videoUrl;
-    }
-
-
 
     return (
         <div className="project__container container">

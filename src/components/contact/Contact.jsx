@@ -61,7 +61,7 @@ const Contact = () => {
                             <i className="uil uil-linkedin contact__icon-title"></i>
                             <h3 className="contact__card-title">LinkedIn</h3>
                             <span className="contact__card-data">João Gabriel de Faria Beserra</span>
-                            <a href="https://www.linkedin.com/in/jo%C3%A3o-gabriel-de-faria-beserra-b352a3305/" target="_blank" rel="noopener noreferrer" className="contact__button">
+                            <a href="https://www.linkedin.com/in/jo%C3%A3o-gabriel-beserra-b352a3305/" target="_blank" rel="noopener noreferrer" className="contact__button">
                                 Dar uma olhada!
                                 <FaArrowRight className="contact__button-icon" />
                             </a>

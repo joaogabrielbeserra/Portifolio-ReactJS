@@ -17,10 +17,7 @@ const About = () => {
                 <div className="about__data">
                     <Info />
                     <p className="about__description">
-                        Sou estudante de Análise e Desenvolvimento de Sistemas no IFSP e atuo como desenvolvedor
-                        de software, criando soluções do web ao mobile. Tenho experiência com automação, integração
-                        de sistemas e projetos para os setores público e privado, aplicando conhecimentos de back-end
-                        e front-end para melhorar processos e resultados reais.
+                        Estudante de Análise e Desenvolvimento de Sistemas no IFSP Caraguatatuba, sou desenvolvedor Full Stack e trabalho como desenvolvedor de inteligencia empresarial na Concessionária Tamoios, criando soluções do web ao mobile com ênfase em frontend (React, Next.js, TypeScript) e base em backend (Java/Spring Boot e Node.js). Tenho experiência com automação, integração de sistemas e projetos para os setores público e privado, e também atuo como desenvolvedor em pesquisa, com visão computacional e aprendizado de máquina aplicados ao monitoramento de fauna na Serra do Mar.
                     </p>
                     <a download="" href={CV} className="button button--flex about__cv">Baixar CV
                         <svg

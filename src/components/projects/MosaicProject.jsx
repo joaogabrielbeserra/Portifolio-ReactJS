@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./mosaic.css";
 
 const PATTERNS = [
@@ -41,17 +42,14 @@ const PATTERNS = [
   },
 ];
 
-function getEmbedUrl(url) {
-  if (!url) return "";
-  if (url.includes("youtu.be")) {
-    const id = url.split("/").pop().split("?")[0];
-    return `https://www.youtube.com/embed/${id}`;
-  }
-  if (url.includes("watch?v=")) {
-    const id = new URL(url).searchParams.get("v");
-    return `https://www.youtube.com/embed/${id}`;
-  }
-  return url;
+function getCoverImage(project) {
+  return project.slug ? `/assets/projetos/${project.slug}/capa.jpg` : project.backgroundUrl;
+}
+
+function getGalleryImages(project) {
+  if (!project.slug) return [];
+  const base = `/assets/projetos/${project.slug}/`;
+  return [1, 2, 3, 4, 5].map((n) => `${base}carousel${n}.jpg`);
 }
 
 const ProjectCard = ({ project, slot, fullWidth, onClick }) => {
@@ -65,12 +63,14 @@ const ProjectCard = ({ project, slot, fullWidth, onClick }) => {
     return () => window.removeEventListener("resize", check);
   }, []);
 
+  const coverImage = getCoverImage(project);
+
   const imageSrc =
     isMobile
-      ? project.backgroundUrl
+      ? coverImage
       : isHovered && project.gifUrl?.trim()
         ? project.gifUrl
-        : project.backgroundUrl;
+        : coverImage;
 
   const style = {
     backgroundImage: imageSrc ? `url(${imageSrc})` : undefined,
@@ -113,6 +113,83 @@ const ProjectCard = ({ project, slot, fullWidth, onClick }) => {
   );
 };
 
+const ProjectGallery = ({ images, title }) => {
+  const [validImages, setValidImages] = useState(null);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    Promise.all(
+      images.map(
+        (src) =>
+          new Promise((resolve) => {
+            const img = new window.Image();
+            img.onload = () => resolve(src);
+            img.onerror = () => resolve(null);
+            img.src = src;
+          })
+      )
+    ).then((results) => {
+      if (!cancelled) {
+        setValidImages(results.filter(Boolean));
+        setIndex(0);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [images]);
+
+  if (validImages === null) return null;
+
+  if (validImages.length === 0) {
+    return <div className="modal-video-placeholder">Sem fotos disponíveis</div>;
+  }
+
+  const prev = (e) => {
+    e.stopPropagation();
+    setIndex((i) => (i - 1 + validImages.length) % validImages.length);
+  };
+  const next = (e) => {
+    e.stopPropagation();
+    setIndex((i) => (i + 1) % validImages.length);
+  };
+
+  return (
+    <div className="modal-gallery">
+      <img
+        src={validImages[index]}
+        alt={`${title} — foto ${index + 1}`}
+        className="modal-gallery__img"
+      />
+
+      {validImages.length > 1 && (
+        <>
+          <button className="modal-gallery__nav modal-gallery__nav--prev" onClick={prev} aria-label="Foto anterior">
+            <FaChevronLeft />
+          </button>
+          <button className="modal-gallery__nav modal-gallery__nav--next" onClick={next} aria-label="Próxima foto">
+            <FaChevronRight />
+          </button>
+
+          <div className="modal-gallery__dots">
+            {validImages.map((_, i) => (
+              <button
+                key={i}
+                className={`modal-gallery__dot${i === index ? " modal-gallery__dot--active" : ""}`}
+                onClick={(e) => { e.stopPropagation(); setIndex(i); }}
+                aria-label={`Ir para foto ${i + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -120,7 +197,7 @@ const ProjectModal = ({ project, onClose }) => {
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const embed = getEmbedUrl(project.videoUrl);
+  const images = getGalleryImages(project);
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -128,15 +205,10 @@ const ProjectModal = ({ project, onClose }) => {
         <button className="modal-close" onClick={onClose} aria-label="Fechar">✕</button>
 
         <div className="modal-video-wrap">
-          {embed ? (
-            <iframe
-              src={embed}
-              title={project.title}
-              allowFullScreen
-              allow="autoplay; encrypted-media"
-            />
+          {images.length > 0 ? (
+            <ProjectGallery images={images} title={project.title} />
           ) : (
-            <div className="modal-video-placeholder">Sem vídeo disponível</div>
+            <div className="modal-video-placeholder">Sem fotos disponíveis</div>
           )}
         </div>
 

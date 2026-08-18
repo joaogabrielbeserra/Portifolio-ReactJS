@@ -14,10 +14,10 @@ const Frontend = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <FaReact className="skills__icon" /> ReactJS - &nbsp; <p className="skills__subtitle">Proficiente</p>
+                                <FaReact className="skills__icon" /> ReactJS <p className="skills__subtitle">Proficiente</p>
                             </h3>
                             <span className="skills__level">
-                                Principal framework. Hooks, componentização e projetos Web completos.
+                                Hooks, componentização e projetos web.
                             </span>
                         </div>
                     </div>
@@ -25,10 +25,10 @@ const Frontend = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <FaBootstrap className="skills__icon" /> Bootstrap - &nbsp; <p className="skills__subtitle">Avançado</p>
+                                <FaBootstrap className="skills__icon" /> Bootstrap <p className="skills__subtitle">Avançado</p>
                             </h3>
                             <span className="skills__level">
-                                Primeiros projetos, grid, componentes responsivos e customização com SCSS.
+                                Grid, componentes responsivos e SCSS.
                             </span>
                         </div>
                     </div>
@@ -36,10 +36,10 @@ const Frontend = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <SiTailwindcss className="skills__icon" /> Tailwind CSS - &nbsp; <p className="skills__subtitle">Avançado</p>
+                                <SiTailwindcss className="skills__icon" /> Tailwind CSS <p className="skills__subtitle">Avançado</p>
                             </h3>
                             <span className="skills__level">
-                                Estilização utilitária em projetos React e TypeScript.
+                                Estilização utilitária e rápida.
                             </span>
                         </div>
                     </div>
@@ -47,10 +47,10 @@ const Frontend = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <FaFigma className="skills__icon" /> Figma - &nbsp; <p className="skills__subtitle">Intermediário</p>
+                                <FaFigma className="skills__icon" /> Figma <p className="skills__subtitle">Intermediário</p>
                             </h3>
                             <span className="skills__level">
-                                Prototipação, wireframes e design de interfaces antes do desenvolvimento.
+                                Prototipação e wireframes de interfaces.
                             </span>
                         </div>
                     </div>
@@ -58,10 +58,10 @@ const Frontend = () => {
                     <div className="skills__data">
                         <div className="">
                             <h3 className="skills__name">
-                                <SiNextdotjs className="skills__icon" /> Next.js - &nbsp; <p className="skills__subtitle">Fundamental</p>
+                                <SiNextdotjs className="skills__icon" /> Next.js <p className="skills__subtitle">Básico</p>
                             </h3>
                             <span className="skills__level">
-                                SSR, SSG e roteamento. Estudando para projetos futuros.
+                                SSR, SSG e roteamento.
                             </span>
                         </div>
                     </div>
