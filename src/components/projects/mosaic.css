@@ -351,6 +351,15 @@
   border: 0.5px solid var(--border-color-alt, rgba(0, 0, 0, 0.1));
 }
 
+.modal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
 .modal-links {
   display: flex;
   gap: 8px;
@@ -358,6 +367,9 @@
 }
 
 .modal-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   font-size: 13px;
   font-weight: var(--font-medium, 500);
   padding: 9px 18px;

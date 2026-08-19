@@ -235,12 +235,30 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
 
         <div className="modal-body">
-          <h2 className="modal-title">{project.title}</h2>
-          {project.date && <p className="modal-date">{project.date}</p>}
+          <div className="modal-header-row">
+            <div>
+              <h2 className="modal-title">{project.title}</h2>
+              {project.date && <p className="modal-date">{project.date}</p>}
+            </div>
 
-          {project.description && (
-            <p className="modal-description">{project.description}</p>
-          )}
+            <div className="modal-links">
+              {project.siteUrl && (
+                <a href={project.siteUrl} target="_blank" rel="noopener noreferrer" className="modal-link primary">
+                  Ver projeto ao vivo ↗
+                </a>
+              )}
+              {project.gitHubLink && (
+                <a href={project.gitHubLink} target="_blank" rel="noopener noreferrer" className="modal-link primary">
+                  GitHub ↗
+                </a>
+              )}
+              {project.videoUrl && (
+                <a href={project.videoUrl} target="_blank" rel="noopener noreferrer" className="modal-link primary">
+                  Ver vídeo ↗
+                </a>
+              )}
+            </div>
+          </div>
 
           <div className="modal-skills">
             {project.skills.map((s, i) => (
@@ -248,18 +266,9 @@ const ProjectModal = ({ project, onClose }) => {
             ))}
           </div>
 
-          <div className="modal-links">
-            {project.siteUrl && (
-              <a href={project.siteUrl} target="_blank" rel="noopener noreferrer" className="modal-link primary">
-                Ver projeto ao vivo ↗
-              </a>
-            )}
-            {project.gitHubLink && (
-              <a href={project.gitHubLink} target="_blank" rel="noopener noreferrer" className="modal-link">
-                GitHub ↗
-              </a>
-            )}
-          </div>
+          {project.description && (
+            <p className="modal-description">{project.description}</p>
+          )}
         </div>
       </div>
     </div>
