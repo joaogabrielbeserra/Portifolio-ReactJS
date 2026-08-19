@@ -31,6 +31,7 @@ const Project = () => {
             shortDescription: "Sistema de manutenção escolar municipal com RBAC e mapa de calor georreferenciado. Vencedor do Hackathon IFSP 2026.",
             description: "Sistema de acompanhamento de manutenção escolar do município de Caraguatatuba: escolas registram ocorrências, a SEDUC acompanha as demandas e uma página pública exibe indicadores para a comunidade. Controle de acesso por papel (RBAC) com três perfis: SEDUC, Diretor e Externo. Backend em Node.js/Express com Prisma e MySQL, autenticação JWT, upload de imagens com Multer e validação com Zod. Mapa de calor georreferenciado com Leaflet e GeoJSON dos bairros do município para visualização espacial das ocorrências. Projeto vencedor do Hackathon IFSP 2026.",
             gifUrl: "",
+            videoUrl: "https://youtu.be/F70Bx5lu9QA",
             siteUrl: "https://zelamais.vercel.app",
             gitHubLink: "",
             size: "large",
@@ -77,7 +78,7 @@ const Project = () => {
             description: "Plataforma com 3 frontends integrados para registro de visitas ao Parque Natural Municipal Juqueriquerê, promovendo educação ambiental e conscientização sobre a biodiversidade local: totem de identificação em React com captura via QR code (português e inglês), aplicativo mobile em React Native com experiência gamificada, rankings mensais e desbloqueio de conteúdo sobre a fauna, e painel administrativo React com monitoramento em tempo real, gestão de conteúdo e exportação de dados em Excel e PDF. Backend em Node.js/Express com Prisma e PostgreSQL, autenticação JWT com três perfis de acesso (cliente, admin e totem) e login social via OAuth2 (Google e Facebook); comunicação em tempo real com Socket.io.",
             gifUrl: "",
             siteUrl: "https://lnkd.in/gbBcms8D",
-            gitHubLink: "",
+            gitHubLink: "https://github.com/6aleatorio6/pj3-Aplicativo-Municipal",
             size: "large",
         },
 
