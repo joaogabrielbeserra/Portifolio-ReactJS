@@ -12,6 +12,7 @@
     font-size: var(--h1-font-size);
     font-weight: var(--font-bold);
     color: var(--cor-titulo);
+    opacity: 0.4;
     margin: 0 var(--mb-1);
     cursor: pointer;
     transition: 0.3s;
@@ -46,6 +47,7 @@
 
 .qualification__button.qualification__active {
     color: var(--cor-titulo-dark);
+    opacity: 1;
 }
 
 .qualification__content-active {

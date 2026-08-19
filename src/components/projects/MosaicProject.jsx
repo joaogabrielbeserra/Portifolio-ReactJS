@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState, useEffect, useRef } from "react";
+import { FaChevronLeft, FaChevronRight, FaExpand, FaCompress } from "react-icons/fa";
 import "./mosaic.css";
 
 const PATTERNS = [
@@ -43,13 +43,13 @@ const PATTERNS = [
 ];
 
 function getCoverImage(project) {
-  return project.slug ? `/assets/projetos/${project.slug}/capa.jpg` : project.backgroundUrl;
+  return project.slug ? `/assets/projetos/${project.slug}/capa.png` : project.backgroundUrl;
 }
 
 function getGalleryImages(project) {
-  if (!project.slug) return [];
+  if (!project.slug || !project.galleryCount) return [];
   const base = `/assets/projetos/${project.slug}/`;
-  return [1, 2, 3, 4, 5].map((n) => `${base}carousel${n}.jpg`);
+  return Array.from({ length: project.galleryCount }, (_, i) => `${base}carousel${i + 1}.png`);
 }
 
 const ProjectCard = ({ project, slot, fullWidth, onClick }) => {
@@ -114,58 +114,76 @@ const ProjectCard = ({ project, slot, fullWidth, onClick }) => {
 };
 
 const ProjectGallery = ({ images, title }) => {
-  const [validImages, setValidImages] = useState(null);
   const [index, setIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [broken, setBroken] = useState(() => new Set());
+  const galleryRef = useRef(null);
 
   useEffect(() => {
-    let cancelled = false;
-
-    Promise.all(
-      images.map(
-        (src) =>
-          new Promise((resolve) => {
-            const img = new window.Image();
-            img.onload = () => resolve(src);
-            img.onerror = () => resolve(null);
-            img.src = src;
-          })
-      )
-    ).then((results) => {
-      if (!cancelled) {
-        setValidImages(results.filter(Boolean));
-        setIndex(0);
-      }
-    });
-
-    return () => {
-      cancelled = true;
-    };
+    setIndex(0);
+    setBroken(new Set());
   }, [images]);
 
-  if (validImages === null) return null;
+  useEffect(() => {
+    const onFullscreenChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    };
+    document.addEventListener("fullscreenchange", onFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", onFullscreenChange);
+  }, []);
 
-  if (validImages.length === 0) {
+  const toggleFullscreen = (e) => {
+    e.stopPropagation();
+    if (!document.fullscreenElement) {
+      galleryRef.current?.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  };
+
+  const prev = (e) => {
+    e?.stopPropagation();
+    setIndex((i) => (i - 1 + images.length) % images.length);
+  };
+  const next = (e) => {
+    e?.stopPropagation();
+    setIndex((i) => (i + 1) % images.length);
+  };
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const onKey = (e) => {
+      if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [images]);
+
+  if (images.length === 0 || broken.has(images[index])) {
     return <div className="modal-video-placeholder">Sem fotos disponíveis</div>;
   }
 
-  const prev = (e) => {
-    e.stopPropagation();
-    setIndex((i) => (i - 1 + validImages.length) % validImages.length);
-  };
-  const next = (e) => {
-    e.stopPropagation();
-    setIndex((i) => (i + 1) % validImages.length);
-  };
-
   return (
-    <div className="modal-gallery">
+    <div className="modal-gallery" ref={galleryRef}>
       <img
-        src={validImages[index]}
+        src={images[index]}
         alt={`${title} — foto ${index + 1}`}
         className="modal-gallery__img"
+        loading="lazy"
+        decoding="async"
+        onError={() => setBroken((prev) => new Set(prev).add(images[index]))}
       />
 
-      {validImages.length > 1 && (
+      <button
+        className="modal-gallery__fullscreen"
+        onClick={toggleFullscreen}
+        aria-label={isFullscreen ? "Sair da tela cheia" : "Ver em tela cheia"}
+      >
+        {isFullscreen ? <FaCompress /> : <FaExpand />}
+      </button>
+
+      {images.length > 1 && (
         <>
           <button className="modal-gallery__nav modal-gallery__nav--prev" onClick={prev} aria-label="Foto anterior">
             <FaChevronLeft />
@@ -175,7 +193,7 @@ const ProjectGallery = ({ images, title }) => {
           </button>
 
           <div className="modal-gallery__dots">
-            {validImages.map((_, i) => (
+            {images.map((_, i) => (
               <button
                 key={i}
                 className={`modal-gallery__dot${i === index ? " modal-gallery__dot--active" : ""}`}
@@ -192,7 +210,11 @@ const ProjectGallery = ({ images, title }) => {
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && onClose();
+    const onKey = (e) => {
+      if (e.key !== "Escape") return;
+      if (document.fullscreenElement) return;
+      onClose();
+    };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);

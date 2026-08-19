@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    FaJava, FaDocker, FaAws, FaTrophy, FaChalkboardTeacher, FaExternalLinkAlt
+    FaJava, FaDocker, FaAws, FaTrophy, FaChalkboardTeacher, FaExternalLinkAlt, FaChartBar
 } from "react-icons/fa";
 import { SiOracle, SiUdemy  } from "react-icons/si";
 import { PiCertificateBold } from "react-icons/pi";
@@ -92,7 +92,7 @@ const certifications = [
         institution: "IFSP",
         date: "jun/2025",
         tags: ["Trabalho em equipe", "Git", "Inovação"],
-        link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/?hash=ea4aa44d06a3d714",
+        link: "https://www.caraguatatuba.sp.gov.br/pmc/2025/07/caraguatatuba-recebe-1-hackathon-do-litoral-norte-e-premia-estudantes-por-solucoes-tecnologicas-para-turismo-local",
         Icon: FaTrophy,
         InstitutionIcon: PiCertificateBold,
     },
@@ -103,8 +103,19 @@ const certifications = [
         institution: "IFSP",
         date: "2026",
         tags: ["Trabalho em equipe", "Inovação"],
-        link: "https://suap.ifsp.edu.br/eventos/autenticar_certificado/",
+        link: "https://www.caraguatatuba.sp.gov.br/pmc/2026/07/hackathon-2026-premia-solucoes-inovadoras-para-desafios-da-educacao-em-caraguatatuba/",
         Icon: FaTrophy,
+        InstitutionIcon: PiCertificateBold,
+    },
+    {
+        id: 10,
+        title: "Business Intelligence",
+        description: "Ferramentas e métodos de BI para apoio à tomada de decisão orientada a dados.",
+        institution: "FGV ",
+        date: "jun/2026",
+        tags: ["Business Intelligence", "Dados", "Gestão"],
+        link: "https://www.brasilopenbadge.com.br/pages/badge/a830ca4887534aafef6d439326343a07",
+        Icon: FaChartBar,
         InstitutionIcon: PiCertificateBold,
     },
 ];
