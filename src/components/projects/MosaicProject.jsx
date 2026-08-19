@@ -299,7 +299,7 @@ function buildRows(projects) {
 }
 
 // Quantos projetos mostrar antes do botão "ver todos"
-const INITIAL_COUNT = 5;
+const INITIAL_COUNT = 6;
 
 const MosaicProject = ({ projects }) => {
   const [selected, setSelected] = useState(null);

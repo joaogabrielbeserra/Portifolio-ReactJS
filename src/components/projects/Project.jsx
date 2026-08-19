@@ -82,6 +82,22 @@ const Project = () => {
         },
 
         {
+            id: 3,
+            title: "Dataset de Fauna — Visão Computacional",
+            slug: "dataset-fauna",
+            galleryCount: 4,
+            date: "2025",
+            skills: ["Python", "Deep Learning", "YOLO", "Visão Computacional", "Anotação de Dados", "Machine Learning"],
+            shortDescription: "Pipeline de visão computacional para monitoramento automatizado de fauna na Serra do Mar.",
+            description: "Pesquisa aplicada em parceria entre IFSP-CAR e Concessionária Tamoios para monitoramento automatizado de fauna na Serra do Mar.",
+            backgroundUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80",
+            gifUrl: "",
+            siteUrl: "",
+            gitHubLink: "",
+            size: "large",
+        },
+
+        {
             id: 2,
             title: "STUP — Sistema de Transporte Público",
             date: "11/2024",
@@ -92,21 +108,6 @@ const Project = () => {
             gifUrl: "",
             siteUrl: "",
             gitHubLink: "https://github.com/JGabrielFBeserra/STUP",
-            size: "large",
-        },
-
-        {
-            id: 3,
-            title: "Dataset de Fauna — Visão Computacional",
-            date: "2025",
-            skills: ["Python", "Deep Learning", "YOLO", "Visão Computacional", "Anotação de Dados", "Machine Learning"],
-            shortDescription: "Pipeline de visão computacional para monitoramento automatizado de fauna na Serra do Mar.",
-            description: "Pesquisa aplicada em parceria entre IFSP-CAR e Concessionária Tamoios para monitoramento automatizado de fauna na Serra do Mar.",
-            backgroundUrl: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80",
-            gifUrl: "",
-            siteUrl: "",
-            gitHubLink: "",
-            size: "large",
         },
 
         {
